@@ -11,10 +11,10 @@
   <style type="text/css">
 
   .container {
-    padding-right: 15px;
+/*    padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto;*/
   }
 
   @media (min-width: 768px) {
@@ -38,8 +38,14 @@
     box-sizing: border-box;
   }
   .container [class^="col-"] {
-    padding:0;
+    padding: 0 15px ;
   }
+
+  .container [class^="col-"] .col-inner{
+    outline: 1px solid #00f;
+    margin: 10px;
+  }
+
   div img {
     background: #00f;
   }
@@ -70,10 +76,24 @@
     </div>
 
 		<div class="row">
-			<div class="col-md-2 col-md-offset-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, aliquip.</div>
-			<div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, temporibus.</div>
-			<div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, commodo.</div>
-			<div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, magna!</div>
+			<div class="col-md-2 col-md-offset-2">
+        <div class="col-inner">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, temporibus.</div>
+      <div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, commodo.</div>
+      <div class="col-md-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, magna!</div>
+      <div class="col-md-2">
+        <div class="col-inner">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="col-md-2">
+        <div class="col-inner">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="col-md-2">
+        <div class="col-inner">Lorem ipsum dolor sit amet.</div>
+      </div>
+      <div class="col-md-2">
+        <div class="col-inner">Lorem ipsum dolor sit amet.</div>
+      </div>
 		</div>
 
 	</div><!--// #container -->
