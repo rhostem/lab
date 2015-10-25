@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function() {
+			$("button").click(function() {
+				console.log('clicked');
+				$('#div1').load('ajax_data.html', function() {
+					console.log('ajax load performed');
+				})
+			});
+		});
+	</script>
+
+	<style type="text/css">
+		#test-1 {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+	<button>Get External Content</button>
+</body>
+</html>

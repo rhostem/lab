@@ -6,6 +6,8 @@ var config = {
 	'browserSync': { // http://www.browsersync.io/docs/options/
 		'server'  : [''],
 		'port'    : 8800,
+		'baseDir': "app",
+    'directory': true,
 		'notify'  : !true,
 		'browser' : 'chrome'
 		// 'browser' : 'firefox'
