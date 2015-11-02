@@ -8,7 +8,7 @@
 		$('document').ready(function() {
 			$("button").click(function() {
 				console.log('clicked');
-				$('#div1').load('ajax_data.html', function() {
+				$('#div1').load('./ajax_data.html', function() {
 					console.log('ajax load performed');
 				})
 			});

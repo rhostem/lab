@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 var config = {
 	'browserSync': { // http://www.browsersync.io/docs/options/
 		'server'  : [''],
-		'port'    : 8800,
+		'port'    : 0077,
 		'baseDir': "app",
     'directory': true,
 		'notify'  : !true,
