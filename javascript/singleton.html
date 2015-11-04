@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		// 생성자로서 복수의 인스턴스를 가질 수 있는 함수
+		// ============================================================
+		function creator () {
+			this.body = "body";
+		}
+
+		var created_1 = new creator();
+		var created_2 = new creator();
+
+		console.log(created_1.constructor === created_2.constructor);
+		console.log(created_1 === created_2);
+
+		// 단 하나의 인스턴스만 가지는 변수
+		// ============================================================
+		var singleton = function() {
+			var private = "private property";
+			function getP (argument) {
+				return private;
+			}
+
+			var obj = {};
+
+			obj.prop = "public property";
+			obj.method = getP;
+
+			return obj;
+		}(); // 즉시 실행으로 인스턴스 생성
+
+
+		console.log(singleton.prop);
+		console.log(singleton.method());
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
