@@ -7,7 +7,7 @@ var config = {
 		'server'  : [''],
 		'port'    : 0077,
 		'baseDir': "app",
-    'directory': true,
+    	'directory': true,
 		'notify'  : !true,
 		'browser' : 'chrome'
 		// 'browser' : 'firefox'
