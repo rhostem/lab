@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>card grid</title>
-	<script type="text/javascript" src="./jquery.js"></script>
+	<script type="text/javascript" src="../libs/jquery-2.1.4.min.js"></script>
 	<style type="text/css">
 		* {
 			box-sizing: border-box;
@@ -12,10 +12,11 @@
 			border: 1px solid #f00;
 		}
 		.container{
-			width: 400px;
+			width: 1000px;
 			position: relative;
 		}
 		.card {
+			transition: all 0.4s ease;
 			position: absolute;
 		}
 	</style>
@@ -30,22 +31,22 @@
 
 	var cards = [
 		{
-			width: 3,
-			height: 1,
+			width: 1,
+			height: 2,
 			posX: undefined,
 			posY: undefined,
 			content: 'card 1'
 		},
 		{
 			width: 1,
-			height: 4,
+			height: 2,
 			posX: undefined,
 			posY: undefined,
 			content: 'card 1'
 		},
 		{
-			width: 3,
-			height: 2,
+			width: 1,
+			height: 1,
 			posX: undefined,
 			posY: undefined,
 			content: 'card 1'
@@ -65,8 +66,8 @@
 			content: 'card 1'
 		},
 		{
-			width: 1,
-			height: 2,
+			width: 2,
+			height: 1,
 			posX: undefined,
 			posY: undefined,
 			content: 'card 1'
@@ -74,7 +75,7 @@
 	];
 
 	var container_width = 4,
-		base_size = 100,
+		base_size = 250,
 		tiles = [],
 		card_area,
 		isCardPositionSet, // check if a card got it's own position
@@ -111,22 +112,22 @@
 					}
 				}
 
-				console.log(card_area);
-				console.log('tiles', tiles);
+				// console.log(card_area);
+				// console.log('tiles', tiles);
 
-				var dupl = false;
+				var isDuplicate = false;
 				for (var chk_cidx = 0; chk_cidx < card_area.length; chk_cidx++) {
 					for (var chk_tidx = 0; chk_tidx < tiles.length; chk_tidx++) {
 
 						if( (card_area[chk_cidx].x === tiles[chk_tidx].x)
 							&& (card_area[chk_cidx].y === tiles[chk_tidx].y) ){
 							// 카드 영역과 타일 영역 중에 겹치는 부분이 있음
-							dupl = true;
+							isDuplicate = true;
 						}
 					}
 				}
 
-				if( dupl === true ){
+				if( isDuplicate === true ){
 					isCardPositionSet = false;
 				}else{
 					// 포지션을 찾았음. 더이상 컨테이너 내부를 탐색할 필요 없음
@@ -139,30 +140,29 @@
 					cards[card_idx].posX = cur_x;
 					cards[card_idx].posY = cur_y;
 
-					console.log(cur_x, cur_y);
-					break;
+					// console.log(cur_x, cur_y);
+					break; // break traversing container
 				}
 
 			};
 
 			if(isCardPositionSet){
-				break;
+				break; // break infinite while loop
 			}else{
 				cur_y++;
 			}
 
-		}
+		}// end of while( !isCardPositionSet )
 
-	};
+	};// end of for (var card_idx = 0; card_idx < cards.length; card_idx++)
 
-	console.log(cards);
+	console.log('cards', cards);
 
 
 	$(document).ready(function() {
 		var $card_box = $('.card');
-		console.log($card_box);
 		for (var i = 0; i < $card_box.length; i++) {
-			console.log($card_box.eq(i));
+			// console.log($card_box.eq(i));
 			$card_box.eq(i).css('width', (cards[i].width * base_size) );
 			$card_box.eq(i).css('height', (cards[i].height * base_size) );
 			$card_box.eq(i).css('left', (cards[i].posX * base_size) );
