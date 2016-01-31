@@ -7,13 +7,11 @@ var gulp = require('gulp'),
 var config = {
 	'browserSync': { // http://www.browsersync.io/docs/options/
 		'server'  : [''],
-		'port'    : 0077,
+		'port'    : 1100,
 		// 'baseDir': "app",
     	'directory': true,
 		'notify'  : !true,
 		'browser' : 'chrome'
-		// 'browser' : 'firefox'
-
 }}
 
 gulp.task('default', function () {
