@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>inheritance</title>
+	<script type="text/javascript">
+
+		var Animal = function( name ) {
+			this.name = name;
+		}
+
+		Animal.prototype.live = true;
+		Animal.prototype.residence = 'earth'
+		Animal.prototype.move = function() {
+			console.log(this.residence + ' moved');
+		};
+
+		var Human = function( name ) {
+			this.name = name;
+			this.countOfLeg = 4;
+		}
+
+		// human inherits it's prototype from Animal's prototype
+		Human.prototype.move = Animal.prototype.move;
+		Human.prototype.live = Animal.prototype.live;
+		// Human.prototype = Animal.prototype; // this inherits all of prototype.
+
+		console.log('Human.prototype = ', Human.prototype);
+
+		//overwriting prototype
+		Human.prototype.move = function() {
+			console.log( 'Human' + '(' + this.name  + ')' +' moved');
+		}
+
+
+		var someone = new Human('MAC'); // new instance
+		console.log('someone instanceof Human =', someone instanceof Human ); // check instance
+		console.log('someone count of leg =', someone.countOfLeg); // inherited
+		console.log('someone.residence = ', someone.residence); // not inherited
+
+		someone.move();;
+
+		// overwriting prototype
+		someone.countOfLeg = 2;
+		console.log('someone count of leg =', someone.countOfLeg); // inherited
+
+		// new prop
+		someone.residence = 'anonymous country'
+		console.log('someone.residence =', someone.residence);
+
+
+	</script>
+</head>
+<body>
+
+
+</body>
+</html>
