@@ -6,6 +6,21 @@
     "gulp-jshint": "^2.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-util": "^3.0.7",
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "jspm": "^0.16.27"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "jspm/test-project"
+    },
+    "dependencies": {
+      "jquery": "npm:jquery@1.12.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
+      "typescript": "npm:typescript@^1.6.2"
+    }
   }
 }
