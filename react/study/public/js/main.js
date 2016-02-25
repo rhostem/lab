@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CommentList from './component/comment-list'
+import CommentBox from './component/comment-box'
 
 
 
 ReactDOM.render(
-  <CommentList />,
+  <CommentBox />,
   document.getElementById('comment-list')
 );

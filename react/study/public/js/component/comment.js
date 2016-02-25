@@ -8,7 +8,6 @@ var Comment = React.createClass({
             {this.props.author}
           </h2>
           {this.props.children.toString()}
-
         </div>
       );
     }

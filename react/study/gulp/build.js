@@ -6,6 +6,8 @@ var rename = require('gulp-rename');
 var exec = require('child_process').exec;
 var replace = require('gulp-replace');
 
+gulp.task('build', ['buildjs']);
+
 gulp.task('buildjs', function(cb) {
   exec('jspm bundle js/**/* --inject --minify',function (err, stdout, stderr) {
     console.log(stdout);
