@@ -1,42 +1,32 @@
-var gulp = require('gulp'),
-	jade = require('gulp-jade'),
-	jshint = require('gulp-jshint'),
-	browserSync = require('browser-sync'),
-	reload      = browserSync.reload;
+'use strict';
 
-var config = {
-	'browserSync': { // http://www.browsersync.io/docs/options/
-		'server'  : [''],
-		'port'    : 1100,
-		// 'baseDir': "app",
-    	'directory': true,
-		'notify'  : !true,
-		'browser' : 'chrome'
-}}
+var gulp = require('gulp');
+var requireDir = require('require-dir');
 
-gulp.task('default', function () {
-	browserSync(config.browserSync);
+global.paths = {
+  js: {
+    src: 'public/src/js/**/*.js',
+    dist: 'public/js',
+  },
+  sass: {
+    src: ['public/src/sass/**/*.sass', 'public/src/sass/**/*.scss'],
+    dist: 'public/css',
+  },
+  jade: {
+    src: ['public/src/jade/**/*.jade', '!public/src/jade/part/**/*.jade'],
+    dist: 'public'
+  },
+  html: {
+    src: '**/*.html',
+    index: 'public/index.html',
+    page: 'public/page',
+  },
+  gulp: 'gulp/*.js',
+  build: 'dist',
+}
 
-});
+global.gulpConfig = {};
 
-gulp.task('js', function() {
-	browserSync(config.browserSync);
+requireDir('./gulp', { recurse: false } );
 
-	gulp.src("javascript/**/*.html")
-		.pipe( jshint() );
-
-	gulp.watch("javascript/**/*.html")
-		.on('change', browserSync.reload);
-
-});
-
-gulp.task('watch-jade', function() {
-	gulp.watch(['test/**/*.jade'], ['jade']);
-})
-
-gulp.task('jade', function() {
-	gulp.src('test/**/*.jade')
-	.pipe( jade({'pretty': '\t'}) )
-	.pipe( gulp.dest('test/dest') )
-	.pipe( reload({stream: true}) );
-});
+gulp.task('default', ['bs', 'watch', 'unbuildjs']);
