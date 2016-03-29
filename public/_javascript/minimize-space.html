@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>remove multispace</title>
+  <script type="text/javascript">
+    if(String.prototype.minimizeSpace === undefined){
+      String.prototype.minimizeSpace = function() {
+        return this.toString().replace(/(\s\s)+/g, ' ');
+      }
+    }
+
+    var test = 'a      abasdasd       <tag>      asd';
+    console.log(test.minimizeSpace());
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
