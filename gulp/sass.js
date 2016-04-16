@@ -31,7 +31,7 @@ gulp.task('sass', function() {
     // .pipe( sass( global.gulpConfig.sass )
     .pipe( sass( global.gulpConfig.sass.process ).on('error', sass.logError) )
     .pipe( autoprefixer({'browsers': ['last 2 versions']}) )
-    .pipe( sourcemaps.write('./maps') )
+    .pipe( sourcemaps.write('.') )
     .pipe( gulp.dest( global.paths.sass.dist ) )
     .pipe( filter('**/*.css') )
     .pipe( browserSync.reload({stream: true}) );

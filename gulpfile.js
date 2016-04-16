@@ -5,21 +5,20 @@ var requireDir = require('require-dir');
 
 global.paths = {
   js: {
-    src: 'public/src/js/**/*.js',
-    dist: 'public/js',
+    src: 'public/src/**/*.js',
+    dist: 'public',
   },
   sass: {
-    src: ['public/src/sass/**/*.sass', 'public/src/sass/**/*.scss'],
-    dist: 'public/css',
+    src: ['public/src/**/*.sass', 'public/src/**/*.scss'],
+    dist: 'public/',
   },
   jade: {
-    src: ['public/src/jade/**/*.jade', '!public/src/jade/part/**/*.jade'],
+    src: ['public/src/**/*.jade', '!public/src/**/part/**/*.jade'],
     dist: 'public'
   },
   html: {
-    src: '**/*.html',
-    index: 'public/index.html',
-    page: 'public/page',
+    src: 'public/src/**/*.html',
+    dist: 'public'
   },
   gulp: 'gulp/*.js',
   build: 'dist',
