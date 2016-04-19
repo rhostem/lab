@@ -5,13 +5,10 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var combinemq = require('gulp-combine-mq');
-
 var gulpif = require('gulp-if');
 var argv = require('yargs').argv;
 var changed = require('gulp-changed');
 var filter = require('gulp-filter');
-
 var browserSync = require('browser-sync');
 
 global.gulpConfig.sass = {

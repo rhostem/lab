@@ -9,13 +9,13 @@ System.config({
     ]
   },
   paths: {
-    "github:*": "lib/github/*",
-    "npm:*": "lib/npm/*"
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
     "angular": "github:angular/bower-angular@1.5.4",
-    "babel": "npm:badbel-core@5.8.38",
+    "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@1.12.0",
