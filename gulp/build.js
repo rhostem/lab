@@ -9,7 +9,9 @@ var replace = require('gulp-replace');
 gulp.task('build', ['buildjs']);
 
 gulp.task('buildjs', function(cb) {
-  exec('jspm bundle js/**/* --inject --minify',function (err, stdout, stderr) {
+  // bundle study-react
+  exec('jspm bundle build/study-react/js/**/*.js public/bundle-lab.js --inject --minify --skip-source-maps',
+    function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
