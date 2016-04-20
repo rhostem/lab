@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript study</title>
+  <script type="text/javascript" src="/lib/js/jquery.js"></script>
+</head>
+<body>
+  <div id="selector"></div>
+
+  <script type="text/javascript">
+
+    function commaSpace(val) {
+      while (/([가-힣\w]+),([가-힣\w]+)/.test(val.toString())) {
+        val = val
+          .toString()
+          .replace(/([가-힣\w]+),([가-힣\w]+)/, '$1' + ', ' + '$2');
+      }
+      return val;
+    }
+
+    var testVal = '그랜져,그랜져HG,그랜져TG,그랜져XG,뉴그랜져,제네시스쿠페';
+    console.log('testVal: ', testVal);
+
+    console.log(commaSpace(testVal));
+
+  </script>
+</body>
+</html>

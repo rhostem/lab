@@ -1,0 +1,41 @@
+<!-- ================================================== -->
+<!-- get model from input and update $scope  -->
+<!-- ================================================== -->
+<!doctype html>
+<html ng-app="spicyApp2">
+  <head>
+    <script src="/jspm_packages/github/angular/bower-angular@1.5.4/angular.js"></script>
+    <script type="text/javascript">
+      var myApp = angular.module('spicyApp2', []);
+
+      myApp.controller('SpicyController', ['$scope', function($scope) {
+
+          var spicy = this;
+          var defaultSpicy = 'very';
+
+          spicy.customSpice = "청양고추";
+          spicy.spice = defaultSpicy;
+
+          spicy.setSpicy = function(spice) {
+              spicy.spice = spice;
+          };
+
+          spicy.resetSpicy = function() {
+            spicy.spice = defaultSpicy
+          }
+      }]);
+
+    </script>
+  </head>
+  <body>
+
+    <div ng-controller="SpicyController as spicy">
+     <input ng-model="spicy.customSpice">
+     <button ng-click="spicy.setSpicy('chili')">Chili</button>
+     <button ng-click="spicy.setSpicy(spicy.customSpice)">Custom spice</button>
+     <button ng-click="spicy.resetSpicy()">reset</button>
+     <p>The food is {{spicy.spice}} spicy!</p>
+    </div>
+
+  </body>
+</html>
