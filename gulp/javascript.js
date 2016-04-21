@@ -19,7 +19,18 @@ gulp.task('js', function() {
 // watch gulp files
 gulp.task('js-gulp', function() {
   gulp.src( global.paths.gulp )
-    .pipe( changed( global.paths.gulp ) )
     .pipe( eslint() )
-    .pipe( eslint.format() );
+    .pipe( eslint.format() )
+    .pipe( gulpif(isFixed, gulp.dest(function(file) {
+      // dest to same folder
+      // overwrite original
+      return file.base;
+    }) ) )
 });
+
+/**
+ * check if ESLint has fixed the file contents
+ */
+function isFixed(file) {
+  return file.eslint != null && file.eslint.fixed;
+}

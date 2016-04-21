@@ -1,0 +1,16 @@
+/* https://github.com/jonathantneal/precss#precss- */
+
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 1rem;
+  margin-top: 0;
+}
+
+.notice--clear {
+  background: green
+}
+
+/*# sourceMappingURL=style.css.map */

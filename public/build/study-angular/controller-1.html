@@ -1,22 +1,16 @@
-<!-- ================================================== -->
-<!-- add method to contoller  -->
-<!-- ================================================== -->
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app>
   <head>
     <script src="/jspm_packages/github/angular/bower-angular@1.5.4/angular.js"></script>
     <script type="text/javascript">
       var myApp = angular.module('myApp',[]);
       myApp.controller('DoubleController', ['$scope', function($scope) {
-        $scope.double = function(value) {
-          return parseFloat(value) * 2;
-        };
+        $scope.double = function(value) { return value * 2; };
       }]);
     </script>
   </head>
   <body>
 
-    <!-- <div> -->
     <div ng-controller="DoubleController">
       Two times <input ng-model="num"> equals {{ double(num) }}
     </div>

@@ -18,7 +18,11 @@ global.paths = {
   },
   html: {
     src: 'public/src/**/*.html',
-    dist: 'public/build/'
+    dist: 'public/build'
+  },
+  css: {
+    src: 'public/src/**/*.css',
+    dist: 'public/build'
   },
   gulp: 'gulp/*.js',
   build: 'dist',

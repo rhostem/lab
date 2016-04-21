@@ -1,0 +1,19 @@
+/* https://github.com/jonathantneal/precss#precss- */
+
+$body-padding: 1rem;
+
+body {
+  display: flex;
+  margin: 0;
+  padding: $body-padding;
+  margin-top: 0;
+}
+
+.notice--clear {
+  @if 3 < 5 {
+    background: green;
+  }
+  @else {
+    background: blue;
+  }
+}
