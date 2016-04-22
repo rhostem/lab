@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>key event</title>
+	<script type="text/javascript" src="./lib/jquery.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(document).keyup(function(event) {
+				var triggers = {
+					D: 'default',
+					N: 'narrow',
+					L: 'large'
+				};
+				var key = String.fromCharCode(event.which);
+
+				// 대문자와 소문자에 상관없이 동일하다. 한글 모드로 입력해도 영어 키로 인식함.
+				console.log('key', key);
+				console.log('event.which', event.which);
+				$('#key-code').text(event.which);
+
+				if(key in triggers){
+					$('#key').text(key + ': ' + triggers[key]);
+				}
+				else{
+					$('#key').text(key);
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+
+	<div id="info">press any key to check keycode</div>
+	<div id="key"></div>
+	<div id="key-code"></div>
+
+</body>
+</html>

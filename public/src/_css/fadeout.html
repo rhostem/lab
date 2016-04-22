@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fadeout</title>
+	<style type="text/css">
+		.visible {
+			/*visibility: visible;*/
+			opacity: 1;
+		}
+		.hidden{
+			/* visibility: hidden; */
+			opacity: 0;
+			/*transition: visibility 0s 2s, opacity 2s linear;*/
+			transition: opacity 0.6s ease-out;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="fade-box" class="visible" style="margin: 10px; width: 100px; height: 100px; background: #ff0">
+		click here to test fade out
+	</div>
+
+	<script type="text/javascript" src="../Libs/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		$('#fade-box').click(function() {
+			$(this).addClass('hidden');
+			console.log('clicked');
+		})
+	</script>
+</body>
+</html>

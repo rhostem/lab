@@ -9,8 +9,8 @@ var rename = require('gulp-rename');
 
 global.gulpConfig.browserSync = {
   'server'  : {
-   baseDir: "public",
-   directory:  true
+    baseDir: "public",
+    directory:  true
   },
   // 'proxy': "127.0.0.1",
   'port'    : 7677,

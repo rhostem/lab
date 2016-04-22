@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>infinite slide</title>
+  <style type="text/css">
+    .container {
+      position: relative;
+      width: 200px;
+      border: 1px solid skyblue;
+      height: 100px;
+      margin: 20px 50px;
+      /* overflow: hidden; */
+    }
+    .slide-wrapper {
+      position: absolute;
+      left: -200px;
+      width: 600px;
+    }
+    .slide {
+      float: left;
+      width: 200px;
+      height: 100px;
+      font-size: 20px;
+      background-color: lightgray;
+      /* transition: all 0.4s linear; */
+    }
+    .slide:nth-child(2n+2) {
+      background-color: pink;
+    }
+    .nav-btn {
+      position: absolute;
+      z-index: 10;
+      top: 80%;
+      width: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: lime;
+    }
+    .nav-btn:nth-child(1) {
+      left: 0;
+    }
+    .nav-btn:nth-child(2) {
+      right: 0;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="slide-wrapper">
+      <div class="slide">slide 1</div>
+      <div class="slide">slide 2</div>
+      <div class="slide">slide 3</div>
+    </div>
+    <div class="nav-btns">
+      <div class="nav-btn"><</div>
+      <div class="nav-btn">></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./lib/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      var $body = $('body');
+
+      function sliding (direction, button) {
+
+        button.disabled = true;
+
+        var $slides = $('.slide');
+        var $slideWrapper = $('.slide-wrapper');
+
+        var length = $slides.length;
+        var copiedSlide;
+
+        switch(direction){
+          case 'left':
+            // slide animation
+            $slideWrapper
+              .animate({
+                left: '-=200'
+              }, 200, function() {
+
+                // move first card to last
+                $slides.eq(0).clone().appendTo('.slide-wrapper');
+                $slides.eq(0).remove();
+
+                // set left position to 0
+                $slideWrapper
+                  .animate({
+                    left: '-200'
+                  }, 0, function() {
+                    button.disabled = false;
+                  });
+              });
+
+            break;
+
+          case 'right':
+            $slideWrapper
+              .animate({
+                left: '+=200'
+              }, 200, function() {
+
+                // move last card to first
+                $slides.eq(length-1).clone().prependTo('.slide-wrapper');
+                $slides.eq(length-1).remove();
+
+                // set left position to 0
+                $slideWrapper
+                  .animate({
+                    left: '-200'
+                  }, 0, function() {
+                    button.disabled = false;
+                  });
+              });
+
+            break;
+        }
+      }
+
+      function slideInit() {
+        var deferred = $.Deferred();
+
+        // $('.slide:last-child').clone().prependTo('.slide-wrapper');
+        // $('.slide:last-child').remove();
+      }
+
+      slideInit();
+
+      $body.on('click', '.nav-btn:first-child', function(e) {
+        sliding('left', this)
+      });
+
+      $body.on('click', '.nav-btn:nth-child(2)', function(e) {
+        sliding('right', this)
+      });
+    })
+  </script>
+</body>
+</html>

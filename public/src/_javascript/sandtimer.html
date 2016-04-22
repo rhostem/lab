@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript study</title>
+  <script type="text/javascript" src="/lib/js/jquery.js"></script>
+</head>
+<body>
+  <div id="selector"></div>
+
+  <script type="text/javascript">
+
+    var maxWidth = 11
+    if(maxWidth%2 ===0){
+      maxWidth++;
+    }
+
+    for (var row = 0 ; row < Math.ceil(maxWidth/2); row++) {
+      var sands = '';
+      var tabs = '';
+      var width = maxWidth - (row*2)
+
+      for(var j= width - row; j < width ; j++){
+        tabs += ' ';
+      }
+      for(var i = 0; i < width; i++) {
+        sands += '*';
+      }
+      console.log(tabs+sands);
+    }
+
+    var rowSize = Math.ceil(maxWidth/2)
+    for (var row = 0 ; row < rowSize; row++) {
+      var sands = '';
+      var tabs = '';
+      var width = (row*2) + 1;
+
+      for(var i = row; i < Math.ceil(maxWidth/2) - 1; i++) {
+        tabs += ' ';
+      }
+      for(var j= 0; j < width ; j++){
+        sands += '*';
+      }
+      console.log(tabs+sands);
+    }
+
+    var output;
+    for (var i = 0; i < maxWidth; i++) {
+      output = '';
+      for (var j = 0; j < maxWidth; j++) {
+        if(i<j){
+          output += '$';
+        }
+      }
+      console.log(output);
+    }
+
+  </script>
+</body>
+</html>

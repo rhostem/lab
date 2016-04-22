@@ -1,0 +1,263 @@
+<!-- ================================================== -->
+<!-- https://css-tricks.com/examples/ResponsiveTables/responsive.php -->
+<!-- ================================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap grid test</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+
+    @charset 'UTF-8';
+
+    .intro {
+      background: url(../img/price/headimage3.jpg) no-repeat bottom center scroll;
+    }
+
+    #price {
+      position: relative;
+    }
+
+    #price .btn-wrapper {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    #price .btn-wrapper [class^='col-'] {
+      margin: 0;
+      padding: 0;
+    }
+
+    #price .btn-wrapper a {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 40px;
+      display: block;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      color: #929497;
+      border: 1px solid #929497;
+      background: #fff;
+      background: -webkit-linear-gradient(top, #fff, #dedede);
+      background: linear-gradient(to bottom, #fff, #dedede);
+    }
+
+    #price .btn-wrapper a:hover {
+      color: #929497;
+    }
+
+    #price .btn-wrapper a.normal {
+      border-right: none;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    #price .btn-wrapper a.wax {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    #price .btn-wrapper .current {
+      color: #fff;
+      background: #30b9ff;
+      background: -webkit-linear-gradient(top, #30b9ff, #0092d8);
+      background: linear-gradient(to bottom, #30b9ff, #0092d8);
+    }
+
+    #price .btn-wrapper .current:hover {
+      color: #fff;
+    }
+
+    #price .price-table-wrapper table {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #price .price-table-wrapper table td,#price .price-table-wrapper table th {
+      border: 1px solid #000;
+    }
+
+    #price .price-table-wrapper table thead {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    #price .price-table-wrapper table tbody td {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-left: 40%;
+    }
+
+    #price .price-table-wrapper table tbody td:before {
+      position: absolute;
+      left: 0;
+      width: 40%;
+      border-right: 1px solid #000;
+    }
+
+    #price .price-table-wrapper table tbody td:nth-of-type(1):before {
+      content: '차량';
+    }
+
+    #price .price-table-wrapper table tbody td:nth-of-type(1) {
+      font-size: 20px;
+      font-weight: 600;
+      background: #ededed;
+    }
+
+    #price .price-table-wrapper table tbody td:nth-of-type(2):before {
+      content: '베이직';
+    }
+
+    #price .price-table-wrapper table tbody td:nth-of-type(3):before {
+      content: '왁싱';
+    }
+
+    #price .price-table-wrapper table tbody td:nth-of-type(4):before {
+      content: 'VIP';
+    }
+
+    #reservation .btn-wrapper {
+      margin-bottom: 40px;
+    }
+
+    #reservation .btn-wrapper a {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 50px;
+      display: block;
+      height: 50px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      color: #fff;
+      border-radius: 6px;
+      background: -webkit-linear-gradient(top, #214f8e, #152d53);
+      background: linear-gradient(to bottom, #214f8e, #152d53);
+      background-color: #214f8e;
+    }
+
+    #reservation .btn-wrapper a:hover {
+      color: #fff;
+    }
+
+    @media (min-width: 768px) {
+      .intro {
+        padding-top: 70px;
+      }
+
+      #price.container .price-table-wrapper table thead {
+        position: initial;
+      }
+
+      #price.container .price-table-wrapper table tbody td {
+        position: initial;
+        display: table-cell;
+        width: initial;
+        padding-left: initial;
+      }
+
+      #price.container .price-table-wrapper table tbody td:before {
+        display: none;
+      }
+
+      #price.container .price-table-wrapper table tbody td:nth-of-type(1) {
+        font-size: initial;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      #reservation .btn-wrapper a {
+        font-size: 18px;
+        line-height: 45px;
+        height: 45px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+	 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <section id="price" class="container">
+
+      <div class="price-table-wrapper row">
+        <table>
+          <thead>
+            <tr>
+              <th>차량</th>
+              <th>베이직</th>
+              <th class="waxing">왁싱</th>
+              <th class="vip">VIP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>소형</td>
+              <td>1,0000원</td>
+              <td class="waxing">2,0000원</td>
+              <td class="vip">2,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+            <tr>
+              <td>초대형</td>
+              <td>1,0000원</td>
+              <td class="waxing">3,0000원</td>
+              <td class="vip">4,0000원</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </body>
+
+	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

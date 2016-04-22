@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hover popup</title>
+  <style type="text/css">
+    .toc {
+      width: 10rem;
+      border: 1px solid lime;
+      position: relative;
+    }
+    .toc li {
+    }
+    a i {
+      display: none;
+    }
+    .toc a:hover i {
+      display: block;
+      position: absolute;
+      width: 10rem;
+      top: 0%;
+      left: 100%;
+      margin-left: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+  <ul class="toc">
+    <li>
+      <a href="">chapter n.
+        <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, assumenda.</i>
+      </a>
+    </li>
+    <li>
+      <a href="">chapter n.
+        <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, cumque!</i>
+      </a>
+    </li>
+    <li>
+      <a href="">chapter n.
+        <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, distinctio.</i>
+      </a>
+    </li>
+  </ul>
+</body>
+</html>

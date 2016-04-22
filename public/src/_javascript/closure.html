@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Closure Example 2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			function createFunctions(num){
+				var result = new Array();
+
+				for (var i=0; i < 10; i++){
+					// result[i] = function(num){
+					// 	return function(){
+					// 		return num;
+					// 	};
+					// }(i);
+
+					if(!num){
+						num = 10;
+					}
+					result[i] = function(){
+						return num++;
+					}
+				}
+
+				return result;
+			}
+
+			var funcs = createFunctions(1);
+
+			for (var i = 0; i < funcs.length; i++) {
+				console.log(funcs[i]());
+			};
+
+
+		</script>
+
+</html>
