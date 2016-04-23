@@ -10,8 +10,8 @@ gulp.task('css', function() {
   gulp.src(global.paths.css.src)
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      require('stylelint')({ /* your options */ }),
-      require('precss')({/* options */ }),
+      require('stylelint')({ }),
+      require('precss')({ }),
       require('autoprefixer')({
         'browsers': ['last 2 versions', '> 1% in KR', 'ie 6-8'],
       }),
@@ -19,7 +19,10 @@ gulp.task('css', function() {
         'sort-order': 'default',
         'empty-lines-between-children-rules': 0
       }),
-      require('postcss-reporter')({ clearMessages: true })
+      require('postcss-clearfix')(),
+      require('postcss-reporter')({
+        clearMessages: true
+      })
     ]))
     .on('error', errorLog)
     .pipe(sourcemaps.write('.'))

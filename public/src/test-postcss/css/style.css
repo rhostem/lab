@@ -1,18 +1,53 @@
 /* https://github.com/jonathantneal/precss#precss- */
 
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
 $body-padding: 1rem;
 
 body {
-  display: flex;
   margin-top: 0;
   padding: $body-padding;
+  border: 1px;
+  color: #000;
+  font-size: 1em;
 }
 
-.notice--clear {
-  @if 3 < 5 {
-    background: green;
+@define-extend pallete {
+  width: 80%;
+  margin: 1rem 10%;
+}
+
+.pallete-heading {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.pallete-retro {
+  @extend pallete;
+  clear: fix;
+  > div {
+    width: 20%;
+    height: 300px;
+    float: left;
   }
-  @else {
-    background: blue;
+}
+
+.retro {
+  &-color-1 {
+    background-color: #e5c3c6;
+  }
+  &-color-2 {
+    background-color: #e1e9b7;
+  }
+  &-color-3 {
+    background-color: #f96161;
+  }
+  &-color-4 {
+    background-color: #bcd2d0;
+  }
+  &-color-5 {
+    background-color: #d0b783;
   }
 }

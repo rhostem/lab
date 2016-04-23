@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // import ReactDOM from 'react-dom'
 
 var HelloReact = React.createClass({
@@ -11,4 +11,4 @@ var HelloReact = React.createClass({
   }
 });
 
-export default HelloReact
+export default HelloReact;

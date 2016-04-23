@@ -30,6 +30,6 @@ global.paths = {
 
 global.gulpConfig = {};
 
-requireDir('./gulp', { recurse: false } );
+requireDir('./gulp', { recurse: false });
 
 gulp.task('default', ['bs', 'watch', 'unbuildjs']);

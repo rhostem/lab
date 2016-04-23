@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 var Comment = React.createClass({
-    render: function(){
+  render: function() {
       return (
         <div className="comment">
           <h2 className="commentAuthor">
