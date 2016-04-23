@@ -4,13 +4,12 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
-  padding: 1rem;
   margin-top: 0;
+  padding: 1rem;
 }
 
 .notice--clear {
-  background: green
+  background: green;
 }
 
 /*# sourceMappingURL=style.css.map */

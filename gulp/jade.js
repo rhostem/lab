@@ -9,20 +9,20 @@ var browserSync = require('browser-sync');
 
 global.gulpConfig.jade = {
   pretty: true
-}
+};
 
 gulp.task('jade', function() {
   gulp.src(global.paths.jade.src)
     .pipe(
       gulpif(
         (argv.all === undefined),
-        changed(global.paths.jade.dist, {extension: '.html'})
+        changed(global.paths.jade.dist, { extension: '.html' })
       )
     )
-    .pipe( jade(global.gulpConfig.jade) )
+    .pipe(jade(global.gulpConfig.jade))
     .on('error', errorLog)
-    .pipe( gulp.dest( global.paths.jade.dist ) )
-    .pipe( browserSync.reload({stream: true}) );
+    .pipe(gulp.dest(global.paths.jade.dist))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 

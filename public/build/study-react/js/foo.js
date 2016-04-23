@@ -1,6 +1,6 @@
 class Foo {
 
-  doSomething () {
+  doSomething (aa) {
     return 'Do Something (by module Foo)';
   }
 }

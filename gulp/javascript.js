@@ -8,24 +8,33 @@ var changed = require('gulp-changed');
 var browserSync = require('browser-sync');
 
 gulp.task('js', function() {
-  gulp.src([ global.paths.js.src ] )
-    .pipe( gulpif( argv.all === undefined , changed( global.paths.js.dist ) ) )
-    .pipe( eslint() )
-    .pipe( eslint.format() )
-    .pipe( gulp.dest( global.paths.js.dist ) )
-    .pipe( browserSync.reload({stream: true}));
+  gulp.src([ global.paths.js.src ])
+    .pipe(gulpif(argv.all === undefined, changed(global.paths.js.dist)))
+    .pipe(eslint({
+      fix: true
+    }))
+    .pipe(eslint.format())
+    .pipe(gulpif(isFixed, gulp.dest(function(file) {
+      // dest to same folder
+      // overwrite original
+      return file.base;
+    })))
+    .pipe(gulp.dest(global.paths.js.dist))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 // watch gulp files
 gulp.task('js-gulp', function() {
-  gulp.src( global.paths.gulp )
-    .pipe( eslint() )
-    .pipe( eslint.format() )
-    .pipe( gulpif(isFixed, gulp.dest(function(file) {
+  gulp.src(global.paths.gulp)
+    .pipe(eslint({
+      fix: true
+    }))
+    .pipe(eslint.format())
+    .pipe(gulpif(isFixed, gulp.dest(function(file) {
       // dest to same folder
       // overwrite original
       return file.base;
-    }) ) )
+    })));
 });
 
 /**

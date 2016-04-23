@@ -8,16 +8,16 @@ var rename = require('gulp-rename');
 
 
 global.gulpConfig.browserSync = {
-  'server'  : {
-    baseDir: "public",
-    directory:  true
+  'server': {
+    baseDir: 'public',
+    directory: true
   },
   // 'proxy': "127.0.0.1",
-  'port'    : 7677,
-  'notify'  : false,
+  'port': 7677,
+  'notify': false,
   'open': false,
   'ghostMode': false,
-}
+};
 
 gulp.task('bs', function() {
   createNewVersionCode();
@@ -33,10 +33,10 @@ function createNewVersionCode() {
   gulp.src('src/jade/part/config/_version_base.jade')
     .pipe(replace('VERSION_NUMBER', number.toString()))
     .pipe(rename({
-      basename: "_version",
-      extname: ".jade"
+      basename: '_version',
+      extname: '.jade'
     }))
-    .pipe( gulp.dest('src/jade/part/config/') );
+    .pipe(gulp.dest('src/jade/part/config/'));
 }
 
 

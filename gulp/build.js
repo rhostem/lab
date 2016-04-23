@@ -1,10 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var jspm = require('gulp-jspm');
-var rename = require('gulp-rename');
 var exec = require('child_process').exec;
-var replace = require('gulp-replace');
 
 gulp.task('build', ['buildjs']);
 
@@ -12,14 +9,14 @@ gulp.task('buildjs', function(cb) {
   // bundle study-react
   exec('jspm bundle build/study-react/js/**/*.js public/bundle-lab.js --inject --minify --skip-source-maps',
     function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    cb(err);
-  });
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+    });
 });
 
 gulp.task('unbuildjs', function(cb) {
-  exec('jspm unbundle',function (err, stdout, stderr) {
+  exec('jspm unbundle', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -42,7 +39,7 @@ gulp.task('unbuildjs', function(cb) {
 
 // Build HTML for distribution.
 gulp.task('buildhtml', function () {
-  gulp.src('public/index.html')
+  gulp.src('public/index.html');
     // .pipe(replace('css/app.css', 'app.min.css'))
     // .pipe(replace('lib/system.js', 'app.min.js'))
     // .pipe(replace('<script src="config.js"></script>', ''))
