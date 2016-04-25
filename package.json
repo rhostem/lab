@@ -3,7 +3,12 @@
   "license": "Unlicensed",
   "repository": {},
   "scripts": {
-    "build": "jspm bundle public/src/js/**/* --inject --minify"
+    "build": "jspm bundle public/src/js/**/* --inject --minify",
+    "eslint": "eslint --fix public/src/**/*.js",
+    "eslint:watch": "watch 'eslint --fix public/src/**/*.js'",
+    "stylelint": "stylelint public/src/**/*.css",
+    "stylelint:watch": "watch stylelint public/src/**/*.css",
+    "bs": "node script/bs.js"
   },
   "version": "0.2.0",
   "devDependencies": {
@@ -29,8 +34,9 @@
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.7",
     "jspm": "^0.16.27",
+    "postcss": "^5.0.19",
     "postcss-clearfix": "^1.0.0",
-    "postcss-import": "^8.1.0",
+    "postcss-partial-import": "^1.3.0",
     "postcss-reporter": "^1.3.3",
     "postcss-scss": "^0.1.7",
     "postcss-sorting": "^1.2.3",
@@ -38,6 +44,7 @@
     "require-dir": "^0.3.0",
     "stylelint": "^6.0.3",
     "stylelint-config-standard": "^6.0.0",
+    "watch": "^0.17.1",
     "yargs": "^3.32.0"
   },
   "jspm": {
@@ -46,7 +53,7 @@
     },
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.5.4",
-      "jquery": "npm:jquery@1.12.0",
+      "jquery": "npm:jquery@^2.2.3",
       "react": "npm:react@^0.14.7",
       "react-dom": "npm:react-dom@^0.14.7"
     },

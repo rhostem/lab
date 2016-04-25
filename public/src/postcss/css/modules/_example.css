@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+@define-mixin icon $name {
+  padding-left: 16px;
+
+  &::after {
+    content: "";
+    background-url: url('/icons/$(name).png');
+  }
+}
+

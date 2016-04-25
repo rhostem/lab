@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+@import 'modules/_example.css';
+@import 'partials/_pallete.css';
+
+$body-padding: 1rem;
+
+body {
+  padding: $body-padding;
+  font-size: 14px;
+}
+

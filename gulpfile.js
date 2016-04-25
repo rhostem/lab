@@ -21,12 +21,12 @@ global.paths = {
     dist: 'public/build'
   },
   css: {
-    src: 'public/src/**/*.css',
+    src: ['public/src/**/*.css'],
     dist: 'public/build'
   },
   gulp: 'gulp/*.js',
   build: 'dist',
-}
+};
 
 global.gulpConfig = {};
 

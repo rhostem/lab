@@ -24,7 +24,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init()) // init sourcemaps
     .pipe(sass(global.gulpConfig.sass.process).on('error', sass.logError))
     .pipe(autoprefixer(global.gulpConfig.sass.autoprefixer))
-    .pipe(sourcemaps.write('./maps'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(global.paths.sass.dist))
     .pipe(browserSync.reload({ stream: true }));
 });
