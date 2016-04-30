@@ -1,27 +1,35 @@
 
-function shouldBeNonZero(value) {
-  if (value !== 0)
-    return true;
-}
+var code = (function(global) {
 
-// define generator
-function* filter(test, iterable) {
-  for (var item of iterable) {
-    if (test(item))
-      yield item;
+  function shouldBeNonZero(value) {
+    if (value !== 0)
+      return true;
   }
-}
 
-var sample = [0, 1, 2, 3, 4];
+  // define generator
+  function* filter(test, iterable) {
+    for (var item of iterable) {
+      if (test(item))
+        yield item;
+    }
+  }
 
-var nonZeroFilter = filter(shouldBeNonZero, sample);
-// generator's next() method returns object has 'value' and 'done' property
-// console.log(nonZeroFilter.next());
+  var sample = [0, 1, 2, 3, 4];
 
-var result = [];
-for (item of nonZeroFilter) { // nonZeroFilter is interablen
-  // push until property 'done' is true
-  result.push(item);
-}
+  var nonZeroFilter = filter(shouldBeNonZero, sample);
 
-console.log(result);
+  // generator's next() method returns object has 'value' and 'done' property
+  // console.log(nonZeroFilter.next());
+
+  var result = [];
+  for (var item of nonZeroFilter) { // nonZeroFilter is interable
+    // push until property 'done' is true
+    result.push(item);
+  }
+
+  console.log(result);
+
+
+})(window);
+
+export default code;
