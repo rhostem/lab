@@ -14,9 +14,9 @@ var code = (function(global) {
     }
   }
 
-  var sample = [0, 1, 2, 3, 4];
+  var sampleNumbers = [0, 1, 2, 3, 4];
 
-  var nonZeroFilter = filter(shouldBeNonZero, sample);
+  var nonZeroFilter = filter(shouldBeNonZero, sampleNumbers);
 
   // generator's next() method returns object has 'value' and 'done' property
   // console.log(nonZeroFilter.next());
