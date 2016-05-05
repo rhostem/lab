@@ -6,6 +6,8 @@ var gulpif = require('gulp-if');
 var argv = require('yargs').argv;
 var changed = require('gulp-changed');
 var browserSync = require('browser-sync');
+var exec = require('child_process').exec;
+
 
 gulp.task('js', function() {
   gulp.src([ global.paths.js.src ])
@@ -35,6 +37,10 @@ gulp.task('js-gulp', function() {
       // overwrite original
       return file.base;
     })));
+});
+
+gulp.task('eslint', function() {
+  exec('watch \'eslint --fix public/src/**/*.js\'');
 });
 
 /**

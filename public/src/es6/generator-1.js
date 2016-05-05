@@ -1,5 +1,5 @@
 
-var code = (function(global) {
+const code = (function(global) {
 
   function shouldBeNonZero(value) {
     if (value !== 0)

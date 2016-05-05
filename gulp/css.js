@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync');
 
+// postcss processing
 gulp.task('css', function() {
   gulp.src(global.paths.css.src)
     .pipe(sourcemaps.init())

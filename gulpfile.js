@@ -10,7 +10,7 @@ global.paths = {
   },
   sass: {
     src: ['public/src/**/*.sass', 'public/src/**/*.scss'],
-    dist: 'public/build/',
+    dist: 'public/build',
   },
   jade: {
     src: ['public/src/**/*.jade', '!public/src/**/part/**/*.jade'],
@@ -18,11 +18,11 @@ global.paths = {
   },
   html: {
     src: 'public/src/**/*.html',
-    dist: 'public/build'
+    dist: 'public/build/'
   },
   css: {
     src: ['public/src/**/*.css'],
-    dist: 'public/build'
+    dist: 'public/build/'
   },
   gulp: 'gulp/*.js',
   build: 'dist',
