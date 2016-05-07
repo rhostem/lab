@@ -2,9 +2,7 @@
 //
 var bs = require('browser-sync').create();
 
-
 bs.watch('**/*.css').on('change', bs.reload);
-
 
 // .init starts the server
 bs.init({

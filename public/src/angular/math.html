@@ -1,0 +1,31 @@
+<!doctype html>
+<html >
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./math.js"></script>
+  </head>
+  <body ng-app="math">
+
+    <div ng-controller="addCtrl as add">
+      <h2>Math - add controller</h2>
+      <p>initNum = {{add.initNum}}</p>
+      <p>
+        <input ng-model="add.val1" ng-change="add.calc()">
+        +
+        <input ng-model="add.val2" ng-change="add.calc()">
+      </p>
+      <p>{{add.val1}} + {{add.val2}} = {{add.result}}</p>
+
+    </div>
+
+    <div ng-controller="multiCtrl as multi">
+      <h2>Math - multiplier controller</h2>
+      <p>multi.initNum = {{multi.initNum}}</p>
+      <p>multi.scopeTest = {{multi.scopeTest}}</p>
+      <p>$scope.scopeTest = {{scopeTest}}</p>
+      <p></p>
+    </div>
+
+  </body>
+</html>

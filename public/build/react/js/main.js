@@ -6,4 +6,3 @@ ReactDOM.render(
   <CommentBox />,
   document.getElementById('comment-list')
 );
-asdasd

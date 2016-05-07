@@ -4,8 +4,11 @@
     "node": true,
     "browser": true
   },
-  "fix": true,
   "extends": "eslint:recommended",
+  "fix": true,
+  "globals": {
+    "angular": true
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",

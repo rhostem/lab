@@ -1,7 +1,7 @@
 class Foo {
 
   doSomething () {
-    return 'Do Something (by module Foo)'
+    return 'Do Something (by module Foo)';
   }
 }
 
