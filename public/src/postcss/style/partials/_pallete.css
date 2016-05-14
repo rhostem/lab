@@ -45,6 +45,19 @@
   .color-5 {
     background-color: #d0b783;
   }
+
+
+
+  @media (--sm) {
+    width: 80%;
+  }
+  @media (--md) {
+    width: 60%;
+  }
+  @media (--lg) {
+    width: 40%;
+  }
+
 }
 
 .pallete-facebook {
