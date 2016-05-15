@@ -10,28 +10,28 @@
   height: 375px;
   background: url('img-w5760.jpg');
   -webkit-animation: slide 20s linear infinite;
-          animation: slide 20s linear infinite;
+  animation: slide 20s linear infinite;
 }
 
 @-webkit-keyframes slide {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-1920px);
-            transform: translateX(-1920px);
+    transform: translateX(-1920px);
   }
 }
 
 @keyframes slide {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-1920px);
-            transform: translateX(-1920px);
+    transform: translateX(-1920px);
   }
 }
 

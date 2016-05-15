@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@import '../utils/_variables.css';
 
 .search {
   @mixin icon search;
@@ -44,8 +44,8 @@
   }
   .color-5 {
     background-color: #d0b783;
+    color: var(--mainColor);
   }
-
 
 
   @media (--sm) {

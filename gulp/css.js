@@ -7,15 +7,16 @@ const gulp = require('gulp'),
 
 // postcss processing
 gulp.task('css', function() {
-  gulp.src(global.paths.css.src)
+  gulp
+    .src(global.paths.css.src)
     .pipe(sourcemaps.init())
     .pipe(postcss([
       require('stylelint')(),
       require('precss')(),
       // to use @import
-      require('postcss-partial-import')(),
+      require('postcss-import')(),
       // add vendor prefix
-      require('autoprefixer')({
+      require('postcss-cssnext')({
         'browsers': ['last 2 versions', '> 1% in KR', 'ie 6-8', 'Firefox ESR'],
       }),
       require('postcss-sorting')({

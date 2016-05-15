@@ -1,0 +1,28 @@
+/**
+ * component 'Tab'
+ */
+.Tab {
+  clear: fix;
+  margin: 5px;
+
+  /* modifier */
+  &--withBorder {
+    clear: fix;
+    margin-top: 3rem;
+    border: 3px solid #ed0;
+  }
+
+  /* descendant */
+  &-link {
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 15px;
+    border: 1px solid #fff;
+    background-color: #edd;
+  }
+
+  &.is-active {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  }
+}

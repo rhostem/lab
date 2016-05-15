@@ -1,4 +1,4 @@
-build
+dist
 
 # JSPM package
 jspm_packages

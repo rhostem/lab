@@ -1,13 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 @import 'utils/_variables.css';
+
 @import 'modules/_example.css';
+
 @import 'partials/_pallete.css';
 
-$body-padding: 1rem;
+@import 'component/_tab.css';
 
+
+* {
+  box-sizing: border-box;
+}
 body {
-  padding: $body-padding;
   font-size: var(--baseFontSize);
 }
 
