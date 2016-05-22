@@ -12,9 +12,9 @@ var exec = require('child_process').exec;
 gulp.task('js', function() {
   gulp.src([ global.paths.js.src ])
     .pipe(gulpif(argv.all === undefined, changed(global.paths.js.dist)))
-    .pipe(eslint({
-      fix: true
-    }))
+    // .pipe(eslint({
+    //   fix: true
+    // }))
     .pipe(eslint.format())
     .pipe(gulpif(isFixed, gulp.dest(function(file) {
       // dest to same folder

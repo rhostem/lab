@@ -1,0 +1,15 @@
+:root {
+
+  --baseFontSize: 14px;
+
+}
+
+/* ========================================
+ * custom emdia query
+ * ======================================== */
+
+@custom-media --sm (min-width: 768px);
+@custom-media --md (min-width: 992px);
+@custom-media --lg (min-width: 992px);
+/* @custom-media --range (width >= 376px) and (width < 768px);
+ */

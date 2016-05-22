@@ -4,12 +4,12 @@ import Comment from './comment';
 
 
 var CommentList = React.createClass({
-  componentDidMount: function() {
+  componentDidMount: function () {
 
   },
-  render: function() {
+  render: function () {
       // 데이터 배열을 이용해서 컴포넌트 구성
-    var commentNodes = this.props.data.map(function(comment) {
+    var commentNodes = this.props.data.map(function (comment) {
       return (
           <Comment key={comment.id} author={comment.author}>
             {comment.text}
@@ -22,7 +22,7 @@ var CommentList = React.createClass({
           {commentNodes}
         </div>
       );
-  }
+  },
 });
 
 export default CommentList;

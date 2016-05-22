@@ -25,6 +25,10 @@ global.paths = {
     src: ['public/src/**/*.css'],
     dist: 'public/dist/'
   },
+  postcss: {
+    src: ['public/src/**/style*.css'],
+    dist: 'public/dist/'
+  },
   gulp: 'gulp/*.js',
   build: 'dist',
 };

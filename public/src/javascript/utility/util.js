@@ -13,7 +13,7 @@ function Util() {
    * 요소를 뷰포트 가운데에 위치하게 함.
    * display: fixed
    */
-  this.setElementCenter = function(element) {
+  this.setElementCenter = function (element) {
     var element_width = element.scrollWidth;
     var element_height = element.scrollHeight;
 
@@ -32,7 +32,7 @@ function Util() {
    *
    * @param {[type]} mobileNumber [description]
    */
-  this.addHyphenToMobileNum = function(mobileNumber) {
+  this.addHyphenToMobileNum = function (mobileNumber) {
 
     if (mobileNumber.constructor !== String) {
       mobileNumber = mobileNumber.toString();
@@ -62,8 +62,8 @@ function Util() {
    * 뷰포트의 시점을 선택한 요소까지 이동시킨다
    * @param  {[string]} selector [description]
    */
-  this.scrollYtoElement = function(selector) {
-    $(selector).ready(function() {
+  this.scrollYtoElement = function (selector) {
+    $(selector).ready(function () {
       // 스크롤 이동
       var search_position = $(selector).position();
       window.scrollTo(0, search_position.top);
@@ -76,7 +76,7 @@ function Util() {
    * @param {[String]} selector [description]
    * @param {[Number]} top      [unit=px]
    */
-  this.setTopPositionFromViewport = function(selector, top) {
+  this.setTopPositionFromViewport = function (selector, top) {
 
     var viewport_positionY = window.scrollY;
     document.querySelector(selector).style.top = (viewport_positionY + top) + 'px';
@@ -87,7 +87,7 @@ function Util() {
    * url을 팝업 레이어 내부의 iframe 안에 불러옴
    * @param  {[type]} option [url, width, height]
    */
-  this.showIframePopup = function(option = {}) {
+  this.showIframePopup = function (option = {}) {
 
     var {
       width = '400px',
@@ -104,10 +104,10 @@ function Util() {
       '</div>'
       );
 
-    $('#popup-iframe').ready(function() {
+    $('#popup-iframe').ready(function () {
 
       self.setTopPositionFromViewport('.popup', 70);
-      $('#popup-iframe .btn-close-popup').click(function() {
+      $('#popup-iframe .btn-close-popup').click(function () {
         self.hideIframePopup();
       });
 
@@ -116,8 +116,8 @@ function Util() {
     this.showMask();
 
     // bind event to hide alert when clicking mask
-    $('.mask').ready(function() {
-      $('.mask').click(function() {
+    $('.mask').ready(function () {
+      $('.mask').click(function () {
         self.hideIframePopup();
       });
     });
@@ -125,7 +125,7 @@ function Util() {
   };
 
 
-  this.hideIframePopup = function(option) {
+  this.hideIframePopup = function (option) {
 
     option = option === undefined ? {} : option;
 
@@ -141,7 +141,7 @@ function Util() {
   /**
    * 불투명 마스크 표시
    */
-  this.showMask = function(option) {
+  this.showMask = function (option) {
 
     option = (option === undefined) ? {} : option;
 
@@ -149,7 +149,7 @@ function Util() {
       option.isShadowedMask ? 'mask' : 'mask mask-transparent';
 
     $body.append(`<div class="${maskClassName}"></div>`);
-    $('.mask').css('height', this.getBodyHeight); //높이 설정
+    $('.mask').css('height', this.getBodyHeight); // 높이 설정
 
     // if close callback is sent, bind event to mask
     if (typeof option.closeCb === 'function') {
@@ -166,14 +166,14 @@ function Util() {
    * 마스크 제거
    * @return {[type]} [description]
    */
-  this.hideMask = function() {
+  this.hideMask = function () {
 
     var $mask = $('.mask');
 
     if ($mask.length > 0) {
       $mask.fadeOut(200);
       // delay를 주지 않으면 fadeout 효과를 적용시킬 수 없음
-      setTimeout(function() {
+      setTimeout(function () {
         // 가장 나중에 추가한 마스크 1개만 제거함
         // 팝업이 2개 이상일 수 있기 때문에
         $mask.eq($mask.length - 1).remove();
@@ -185,9 +185,9 @@ function Util() {
    *  body 전체 높이 구하기
    * @return {[type]} [description]
    */
-  this.getBodyHeight = function() {
+  this.getBodyHeight = function () {
     var body = document.body,
-        html = document.documentElement;
+      html = document.documentElement;
 
     // Chrome에서는 scrollHeight
     var height = Math.max(body.scrollHeight, body.offsetHeight,
@@ -201,7 +201,7 @@ function Util() {
    *
    * @param  {[Object]} options
    */
-  this.showAlert = function(option = {}) {
+  this.showAlert = function (option = {}) {
 
     // get values from option
     var {
@@ -225,7 +225,7 @@ function Util() {
     if (showMask) {
       self.showMask({
         // bind closeCallback for closing mask
-        closeCb: closeCallback
+        closeCb: closeCallback,
       });
     }
 
@@ -237,10 +237,10 @@ function Util() {
       </div>`
     );
 
-    $('.popup.alert').ready(function() {
+    $('.popup.alert').ready(function () {
       // bind event to the alert
       // ========================================
-      $('.popup.alert').click(function(e) {
+      $('.popup.alert').click(function (e) {
         closeCallback();
       });
 
@@ -260,7 +260,7 @@ function Util() {
    *
    * @param  {[Object]} alert [이벤트 콜백의 this]
    */
-  this.hideAlert = function($alert) {
+  this.hideAlert = function ($alert) {
 
     if ($alert === undefined) {
       $alert = $('.popup.alert');
@@ -278,7 +278,7 @@ function Util() {
   /**
    * 알림창의 메시지 변경
    */
-  this.changeAlertMsg = function(msg) {
+  this.changeAlertMsg = function (msg) {
     $('.popup.alert .message').empty();
     $('.popup.alert .message').append(msg);
   };
@@ -288,7 +288,7 @@ function Util() {
    * 닫을 수 있게 만든다
    * @return {[type]} [description]
    */
-  this.makeAlertRemovable = function() {
+  this.makeAlertRemovable = function () {
     $('.popup.alert').removeClass('immutable');
   };
 
@@ -299,7 +299,7 @@ function Util() {
    * @param  {[Object]} options [className, message, showMask, value, yesCallback, noCallback ]
    * @return {[type]}         [description]
    */
-  this.showConfirm = function(option = {}) {
+  this.showConfirm = function (option = {}) {
 
     var {
       msg = 'alert',
@@ -307,7 +307,7 @@ function Util() {
       noCallback = this.hideConfirm,
       yesCallback = this.hideConfirm,
       isWarning = false,
-      value = ''
+      value = '',
     } = option;
 
     var className = 'popup confirm centered';
@@ -332,16 +332,16 @@ function Util() {
     if (showMask) {
       // bind noCallback for clicking mask
       self.showMask({
-        closeCb: noCallback
+        closeCb: noCallback,
       });
     }
 
     // 예, 아니오 이벤트 연결
-    $('.popup.confirm .no').click(function() {
+    $('.popup.confirm .no').click(function () {
       noCallback();
     });
 
-    $('.popup.confirm .yes').click(function() {
+    $('.popup.confirm .yes').click(function () {
       yesCallback();
     });
 
@@ -358,7 +358,7 @@ function Util() {
   /**
    * 확인 창 닫기. 마스크는 함께 닫지 않는다.
    */
-  this.hideConfirm = function(option) {
+  this.hideConfirm = function (option) {
     // set default
     option = (option === undefined ? {} : option);
 
@@ -380,7 +380,7 @@ function Util() {
    *
    * @param  {[String]} url [ 루트(/)를 포함한 상대경로 ]
    */
-  this.redirectPage = function(url) {
+  this.redirectPage = function (url) {
     window.location = window.location.origin + url;
   };
 
@@ -390,9 +390,9 @@ function Util() {
    * @param  {[type]} string [description]
    * @return {[type]}        [description]
    */
-  this.getByteSize = function(targetString) {
+  this.getByteSize = function (targetString) {
 
-    var size = (function(s, b, i, c) {
+    var size = (function (s, b, i, c) {
       for (b = i = 0; c = s.charCodeAt(i++); b += c >> 11 ? 2 : c >> 7 ? 2 : 1); // euc-kr
         // for(b=i=0;c=s.charCodeAt(i++);b+=c>>11?3:c>>7?2:1); // utf-8
       return b;
@@ -407,7 +407,7 @@ function Util() {
    * @param  {[type]} val [description]
    * @return {[type]}     [description]
    */
-  this.commaSeparateNumber = function(val) {
+  this.commaSeparateNumber = function (val) {
     while (/(\d+)(\d{3})/.test(val.toString())) {
       val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
     }
@@ -420,7 +420,7 @@ function Util() {
    * @param  {[Number]} num]
    * @return {[String or Number]}     [한자리 숫자라면 문자열 0을 붙여서 리턴, 아니면 그대로 리턴]
    */
-  this.prependZero = function(num) {
+  this.prependZero = function (num) {
 
     var num_string = num.toString();
 
@@ -434,7 +434,7 @@ function Util() {
    * 현재 시간 정보(local time)를 가진 객체를 반환
    * @return {[Object]} [년, 월, 일, 시, 분]
    */
-  this.getCurrentTime = function() {
+  this.getCurrentTime = function () {
     var date = new Date();
     var current = {};
 
@@ -454,10 +454,10 @@ function Util() {
    * @param  {[String]} dateStr [yyyy-mm-dd]
    * @return {[Object]} date
    */
-  this.parseDateYYYYMMDD = function(dateStr) {
+  this.parseDateYYYYMMDD = function (dateStr) {
     var dates = dateStr.split('-');
 
-    dates = dates.map(function(item, index) {
+    dates = dates.map(function (item, index) {
       if (index === 1) { // if month
         return item - 1;
       } else {

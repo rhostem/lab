@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "_": true,
+    "$": true,
+    "angular": true
+  },
+
+  "rules": {
+    "no-param-reassign": ["error", { "props": false }],
+    "func-names": "off",
+    "padded-blocks": "off",
+    "object-shorthand": ["error", "always", { "avoidQuotes": true }],
+    "no-shadow": ["error", {
+        "allow": ["resolve", "reject", "done", "cb", "data"]
+      }],
+    "max-len": ["off"],
+    "no-unused-vars": ["error", { "args": "none" }],
+
+    "import/no-unresolved": ["off"]
+  }
+}

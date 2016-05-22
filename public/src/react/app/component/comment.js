@@ -1,7 +1,7 @@
 import React from 'react';
 
 var Comment = React.createClass({
-  render: function() {
+  render: function () {
     return (
         <div className="comment">
           <h2 className="commentAuthor">
@@ -10,7 +10,7 @@ var Comment = React.createClass({
           {this.props.children.toString()}
         </div>
       );
-  }
+  },
 });
 
 export default Comment;
