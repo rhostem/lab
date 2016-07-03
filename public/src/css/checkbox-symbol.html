@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>checkbox symbol</title>
+  <style type="text/css">
+
+    input[type="checkbox"] {
+      position: relative;
+      height: 1.4em;
+      height: 1.4em;
+      margin-right: 1em;
+    }
+
+    input[type="checkbox"]::before {
+      position: absolute;
+      width: 1.4em;
+      height: 1.4em;
+      content: ' ';
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    input[type="checkbox"]:checked::after {
+      position: absolute;
+      left: 0.31em;
+      color: #ff5a5f;
+      content: '\2713';
+      text-align: center;
+      font-size: 1.4em;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <input type="checkbox" name="test" checked>
+    <!-- <input type="checkbox" name="test"> -->
+    <span>test checkbox</span>
+  </div>
+</body>
+</html>
