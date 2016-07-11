@@ -1,0 +1,50 @@
+/* $dev: true; */
+$dev: false;
+
+:root {
+  /* facebook color set */
+  --fbColor1: #3b5998;
+  --fbColor2: #8b9dc3;
+  --fbColor3: #dfe3ee;
+  --fbColor4: #f7f7f7;
+  --fbColor5: #fff;
+}
+
+@font-face {
+  font-familiy: NanumGothic;
+  src: url('../../assets/font/NanumGothic.woff');
+}
+
+@font-face {
+  font-familiy: Inconsolata;
+  src: url('../../assets/font/Inconsolata.woff');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: NanumGothic, sans-serif;
+}
+
+@if $dev == true {
+  div {
+    outline: 1px solid #1fbed6;
+  }
+  a {
+    outline: 1px solid #97c30a;
+  }
+  input,
+  button {
+    outline: 1px solid #ff717e;
+  }
+  ul,
+  ol,
+  li {
+    outline: 1px solid #c0bcb6;
+  }
+  p,
+  span,
+  label {
+    outline: 1px solid #555;
+  }
+}
+
