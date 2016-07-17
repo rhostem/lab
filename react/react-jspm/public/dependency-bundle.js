@@ -7360,6 +7360,58 @@ System.registerDynamic("npm:babel-runtime@5.8.38/core-js/set.js", ["npm:core-js@
   return module.exports;
 });
 
+System.registerDynamic("npm:classnames@2.2.5/index.js", [], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  "format cjs";
+  (function() {
+    'use strict';
+    var hasOwn = {}.hasOwnProperty;
+    function classNames() {
+      var classes = [];
+      for (var i = 0; i < arguments.length; i++) {
+        var arg = arguments[i];
+        if (!arg)
+          continue;
+        var argType = typeof arg;
+        if (argType === 'string' || argType === 'number') {
+          classes.push(arg);
+        } else if (Array.isArray(arg)) {
+          classes.push(classNames.apply(null, arg));
+        } else if (argType === 'object') {
+          for (var key in arg) {
+            if (hasOwn.call(arg, key) && arg[key]) {
+              classes.push(key);
+            }
+          }
+        }
+      }
+      return classes.join(' ');
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+      module.exports = classNames;
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+      define('classnames', [], function() {
+        return classNames;
+      });
+    } else {
+      window.classNames = classNames;
+    }
+  }());
+  return module.exports;
+});
+
+System.registerDynamic("npm:classnames@2.2.5.js", ["npm:classnames@2.2.5/index.js"], true, function($__require, exports, module) {
+  ;
+  var define,
+      global = this,
+      GLOBAL = this;
+  module.exports = $__require('npm:classnames@2.2.5/index.js');
+  return module.exports;
+});
+
 System.registerDynamic("npm:react@15.1.0/lib/FallbackCompositionState.js", ["npm:object-assign@4.1.0.js", "npm:react@15.1.0/lib/PooledClass.js", "npm:react@15.1.0/lib/getTextContentAccessor.js"], true, function($__require, exports, module) {
   "use strict";
   ;

@@ -1,8 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-// import { createHashHistory } from 'history';
-// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
 import Root from './components/root';
 import Main from './components/common/main';

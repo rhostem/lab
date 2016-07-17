@@ -255,6 +255,8 @@ System.config({
       "npm:react@15.1.0/lib/SyntheticInputEvent.js",
       "npm:react@15.1.0/lib/SyntheticCompositionEvent.js",
       "npm:react@15.1.0/lib/FallbackCompositionState.js",
+      "npm:classnames@2.2.5.js",
+      "npm:classnames@2.2.5/index.js",
       "npm:babel-runtime@5.8.38/core-js/set.js",
       "npm:core-js@1.2.6/library/fn/set.js",
       "npm:core-js@1.2.6/library/modules/$.core.js",
@@ -360,6 +362,7 @@ System.config({
   map: {
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "classnames": "npm:classnames@2.2.5",
     "core-js": "npm:core-js@1.2.6",
     "history": "npm:history@3.0.0",
     "react": "npm:react@15.1.0",
