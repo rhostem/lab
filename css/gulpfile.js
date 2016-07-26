@@ -103,7 +103,6 @@ var buildStyles = function() {
    * @type {[type]}
    */
   var injectFiles = gulp.src([
-      path.join(conf.paths.src, '/styles/**/*.css'),
       path.join(conf.paths.src, '/**/*.css'),
       path.join('!' + conf.paths.src, '/style.inject.css'),
       path.join('!' + conf.paths.src, '/style.css'),
@@ -111,6 +110,7 @@ var buildStyles = function() {
 
   var injectOptions = {
     transform: function(filePath) {
+      console.log(filePath);
       filePath = filePath.replace('src/', '');
       return '@import "' + filePath + '";';
     },

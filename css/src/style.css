@@ -418,39 +418,6 @@ body {
   margin-right: calc(99.99% * 1/3 - (30px - 30px * 1/3) + (30px * 2)) !important;
 }
 
-/**
- * component 'Tab'
- */
-
-.Tab {
-  clear: fix;
-  margin: 5px
-
-  /* modifier */
-
-  /* descendant */
-}
-
-.Tab--withBorder{
-  clear: fix;
-  margin-top: 48px;
-  margin-top: 3rem;
-  border: 3px solid #ed0;
-}
-
-.Tab-link{
-  display: block;
-  float: left;
-  width: 20%;
-  padding: 15px;
-  border: 1px solid #fff;
-  background-color: #edd;
-}
-
-.Tab.is-active{
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-}
-
 /* .search {
   @mixin icon search;
 }
@@ -538,6 +505,39 @@ body {
 
 .pallete-facebook .color-5 {
   background-color: #fff;
+}
+
+/**
+ * component 'Tab'
+ */
+
+.Tab {
+  clear: fix;
+  margin: 5px
+
+  /* modifier */
+
+  /* descendant */
+}
+
+.Tab--withBorder{
+  clear: fix;
+  margin-top: 48px;
+  margin-top: 3rem;
+  border: 3px solid #ed0;
+}
+
+.Tab-link{
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  border: 1px solid #fff;
+  background-color: #edd;
+}
+
+.Tab.is-active{
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 @charset 'utf-8';

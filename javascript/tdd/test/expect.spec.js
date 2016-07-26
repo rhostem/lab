@@ -1,7 +1,7 @@
 import expect from 'expect';
 
-describe('test syntax', function () {
-  describe('expect', function () {
+describe('mocha', function () {
+  describe('with `expect` test library:', function () {
     it('toBe: strict equal(===) ', function () {
       function foo () {
         return 'foo';
@@ -70,18 +70,48 @@ describe('test syntax', function () {
       });
     });
 
-    describe('toExclude:', () => {
-      it('값을 포함하지 않을음 확인', () => {
+    describe('toExclude:', function () {
+      it('값을 포함하지 않을음 확인', function () {
         expect([1, 2, 3]).toExclude(5);
       });
     });
 
     describe('toIncludeKey, toIncludeKeys', function () {
       it('객체가 지정된 키를 포함하는지 확인. 하나의 키의 경우, 복수의 키의 경우 메소드가 다름', function () {
-        expect({foo: 1, bar:2})
+        expect({foo: 1, bar: 2})
           .toIncludeKey('foo')
           .toIncludeKeys(['foo', 'bar']);
       });
+    });
+
+    describe('async test in mocha:', function () {
+      it("Using setTimeout to simulate asynchronous code!", function(done){
+          setTimeout(function() {
+            // async callback needs done()
+            done();
+          }, 200);
+      });
+
+      it("try ~ catch와 함께 Promise 테스트", function(done) {
+        var testPromise = new Promise(function(resolve, reject) {
+          setTimeout(function() {
+            resolve("Hello World!");
+          }, 200);
+        });
+
+        testPromise.then(function(result){
+          try {
+            expect(result).toEqual("Hello World!");
+            done();
+          }
+          catch(err) {
+            // reject message will be shown
+            done(err);
+          }
+        }, done);
+
+      });
+
     });
 
   });
