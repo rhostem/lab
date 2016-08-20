@@ -1,0 +1,48 @@
+/* :global(.example) {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #eee;
+}
+
+:global(.example-enter) {
+  opacity: 0.01;
+}
+
+:global(.example-enter.example-enter-active) {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+:global(.example-leave) {
+  opacity: 1;
+}
+
+:global(.example-leave.example-leave-active) {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+ */
+.example {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #f0f;
+}
+
+.exampleEnter {
+  opacity: 0.01;
+}
+
+.exampleEnter.exampleEnterActive {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.exampleLeave {
+  opacity: 1;
+  background-color: #ed0;
+}
+
+.exampleLeave.exampleLeaveActive {
+  opacity: 0.01;
+  transition: all 300ms ease-in;
+}
