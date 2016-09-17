@@ -1,8 +1,9 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "comment-empty-line-before": [ "always", {
-      "ignore": ["stylelint-commands", "between-comments"],
+    "comment-empty-line-before": null,
+    "at-rule-empty-line-before": ["always", {
+      "except": "all-nested"
     }],
     "declaration-block-properties-order": [
       "position",

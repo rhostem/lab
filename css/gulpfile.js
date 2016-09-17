@@ -129,7 +129,6 @@ var buildStyles = function() {
       'browsers': ['last 2 versions', '> 1% in KR', 'ie 9-10', 'Firefox ESR'],
     }),
     require('precss')(),
-    require('postcss-advanced-variables')(),
     require('lost'),
     require('postcss-assets')({
       baseUrl: '/',
@@ -140,32 +139,34 @@ var buildStyles = function() {
       ],
       cachebuster: true,
     }),
-    require('postcss-sprites').default({
-      stylesheetPath: './src',
-      spritePath: './assets/sprites/',
-      retina: true,
-      groupBy: function(image) {
-        // 경로에 map을 포함하고 있을 경우, 스프라이트 파일을 별도로 저장
-        if (image.url.indexOf('map') === -1) {
-          return Promise.reject();
-        }
-        return Promise.resolve('map');
-      },
-      hooks: {
-        onUpdateRule: function(rule, token, image) {
-          // Use built-in logic for background-image & background-position
-          updateRule(rule, token, image);
-          ['width', 'height'].forEach(function(prop) {
-            rule.insertAfter(rule.last, postcss.decl({
-              prop: prop,
-              value: (image.url.indexOf('@2x') > -1) ? // if retina image
-                (image.coords[prop] / 2) + 'px' :
-                image.coords[prop] + 'px'
-            }));
-          });
-        }
-      }
-    }),
+    require('postcss-utilities'),
+    require('postcss-short')(),
+    // require('postcss-sprites').default({
+    //   stylesheetPath: './src',
+    //   spritePath: './assets/sprites/',
+    //   retina: true,
+    //   groupBy: function(image) {
+    //     // 경로에 map을 포함하고 있을 경우, 스프라이트 파일을 별도로 저장
+    //     if (image.url.indexOf('map') === -1) {
+    //       return Promise.reject();
+    //     }
+    //     return Promise.resolve('map');
+    //   },
+    //   hooks: {
+    //     onUpdateRule: function(rule, token, image) {
+    //       // Use built-in logic for background-image & background-position
+    //       updateRule(rule, token, image);
+    //       ['width', 'height'].forEach(function(prop) {
+    //         rule.insertAfter(rule.last, postcss.decl({
+    //           prop: prop,
+    //           value: (image.url.indexOf('@2x') > -1) ? // if retina image
+    //             (image.coords[prop] / 2) + 'px' :
+    //             image.coords[prop] + 'px'
+    //         }));
+    //       });
+    //     }
+    //   }
+    // }),
     require('postcss-browser-reporter')(),
   ];
 
