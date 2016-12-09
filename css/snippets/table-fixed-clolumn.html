@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>table fixed column</title>
+  <link rel="stylesheet" type="text/css" href="../vendor/normalize.css">
+  <style type="text/css">
+    .outer {
+      position: relative;
+    }
+
+    .inner {
+      width: 500px;
+      height: 400px;
+      /* height: 300px; */
+      margin-left: 100px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    thead {
+      /* position: absolute; */
+      top: 0;
+      left: 0;
+    }
+    tr {
+      display: block;
+    }
+
+    td {
+      min-width: 200px;
+      padding: 10px 0;
+    }
+
+
+    th {
+      width: 100px;
+      /* height: 100%; */
+      position: absolute;
+      left: 0;
+      background-color: #1d1;
+    }
+
+    td, th {
+      border-top: 3px solid #f0f;
+    }
+
+    td:nth-child(2) {
+      margin-left: -100px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">
+      <table>
+        <thead>
+          <tr>
+            <th>1st column</td>
+            <td>cell</td>
+            <td>cell Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</td>
+            <td>cell</td>
+            <td>cell</td>
+          </tr>
+        </thead>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+        <tr>
+          <th>1st column</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+          <td>cell</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

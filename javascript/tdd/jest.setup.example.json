@@ -1,0 +1,32 @@
+"jest": {
+  "transform": {
+    ".*": "<rootDir>/node_modules/babel-jest"
+  },
+  "unmockedModulePathPatterns": [
+    "react",
+    "react-dom",
+    "react-addons-test-utils",
+    "fbjs",
+    "enzyme",
+    "chai",
+    "lodash",
+    "redux",
+    "react-redux",
+    "react-router"
+  ],
+  "testEnvironment": "node",
+  "setupFiles": [
+    "<rootDir>test.setup.js"
+  ],
+  "testPathDirs": [
+    "<rootDir>"
+  ],
+  "moduleFileExtensions": [
+    "js",
+    "jsx"
+  ],
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>fileMock.js",
+    "\\.(css|less)$": "<rootDir>styleMock.js"
+  }
+}

@@ -8,12 +8,16 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Layout from '../../components/Layout';
 import s from './styles.css';
 import { title, html } from './index.md';
 
 class AboutPage extends React.Component {
+
+  static propTypes = {
+    articles: PropTypes.array.isRequired,
+  };
 
   componentDidMount() {
     document.title = title;
@@ -22,9 +26,15 @@ class AboutPage extends React.Component {
   render() {
     return (
       <Layout className={s.content}>
-        <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
+        <h4>Articles</h4>
+        <ul>
+          {this.props.articles.map((article, i) =>
+            <li key={i}><a href={article.url}>{article.title}</a> by {article.author}</li>
+          )}
+        </ul>
       </Layout>
+
     );
   }
 

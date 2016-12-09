@@ -27,26 +27,17 @@ class HomePage extends React.Component {
   render() {
     return (
       <Layout className={s.content}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-
         <div className={s.playground}>
           <h2>React playground</h2>
           <ul>
             <li>
               <Link to="/css-transition">React css transition</Link>
             </li>
+            <li>
+              <Link to="/dnd">drag and drop</Link>
+            </li>
           </ul>
         </div>
-
-        <h4>Articles</h4>
-        <ul>
-          {this.props.articles.map((article, i) =>
-            <li key={i}><a href={article.url}>{article.title}</a> by {article.author}</li>
-          )}
-        </ul>
-        <p>
-          <br /><br />
-        </p>
       </Layout>
     );
   }
