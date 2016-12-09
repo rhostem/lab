@@ -1,0 +1,35 @@
+.PostcssUtil {
+  height: 100vh;
+  border: 20px 10px solid;
+  @util border-color(lime, #696969);
+
+  .floatWrapper {
+    @util clearfix;
+    border: 1px solid #0f0;
+  }
+
+  .floatBox {
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid gray;
+  }
+
+  .circle {
+    @util center;
+    @util circle(100px, #ededed);
+
+    span {
+      @util center;
+    }
+  }
+
+  .abs-short {
+    position: absolute 300px 100px * *; /* postcss-short: position */
+    border: 1px 10px solid #f0f; /* postcss-short: border */
+  }
+
+  .footer {
+    @util sticky-footer;
+  }
+}
