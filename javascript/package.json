@@ -12,7 +12,8 @@
     "cross-env": "^2.0.0",
     "expect": "^1.20.2",
     "jsdom": "^9.8.3",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.7"
   },
   "scripts": {
     "test": "mocha -w --compilers js:babel-register src/**/*.test.js src/**/*.spec.js --reporter nyan",
