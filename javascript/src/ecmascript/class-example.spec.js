@@ -1,5 +1,5 @@
 import expect from 'expect';
-import Foo from '../../src/module/foo';
+import { Foo } from './class-example.js';
 
 describe('class Foo', function () {
   var foo;

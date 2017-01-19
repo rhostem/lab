@@ -1,4 +1,4 @@
-export default class Foo {
+export class Foo {
   sum(a, b) {
     return a + b;
   }
