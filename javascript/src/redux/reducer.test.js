@@ -8,7 +8,7 @@ import sinon from 'sinon';
   action 객체로 배열을 만든 후 reduce 메소드를 호출한다.
   콜백함수로 reducer, initialValue로 state를 지정한다.
   reducer 함수 내부에서 콜백 함수로 변경된 state를 다시 리턴하면 reducer 함수의 파라메터는
-  항상 state, action이 된다.
+  항상 state(=prev), action(=next)이 된다.
  */
 describe('redux reducer', () => {
   const actions = [
@@ -40,4 +40,3 @@ describe('redux reducer', () => {
     expect(s).to.equal(result);
   });
 });
-
