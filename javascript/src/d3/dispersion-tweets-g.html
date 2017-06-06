@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>d3 example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+</head>
+<style>
+  svg {
+    height: 500px;
+    width: 500px;
+    border: 1px solid gray;
+  }
+  /* #96ceb4 (150,206,180) */
+  /* #ffeead (255,238,173) */
+  /* #ff6f69 (255,111,105) */
+  /* #ffcc5c (255,204,92) */
+  /* #88d8b0 (136,216,176) */
+</style>
+<body>
+<svg id="svg"></svg>
+<script type="text/javascript">
+
+d3.json('data/tweets.json', function (data) {
+
+  const svgWidth = 450;
+  const svgHeight = 450;
+
+  let tweets = data.tweets.map((t) => {
+    return Object.assign(t, {
+      tweetTime: new Date(t.timestamp),
+      impact: t.retweets.length + t.favorites.length, // 영행력은 리트윗 + 즐겨찾기
+      _id: JSON.stringify(t),
+    });
+  });
+
+  const maxImpact = d3.max(tweets, t => t.impact);
+  const [startTime, endTime] = d3.extent(tweets, t => t.tweetTime);
+  const timeRamp = d3.scaleTime().domain([startTime, endTime]).range([20, svgWidth]); // x축
+  const yScale = d3.scaleLinear().domain([0, maxImpact]).range([10, svgHeight - 30]); // y축
+  const radiusScale = d3.scaleLinear().domain([0, maxImpact]).range([2, 30]); // 원 크기
+  const colorScale = d3.scaleLinear().domain([0, maxImpact]).range(['#ffcc5c', '#ff6f69']); // 컬러스케일
+
+  const tweetG = d3.select('svg')
+    .selectAll('g')
+    .data(tweets, t => t._id) // set key as _id
+    .enter()
+    .append('g')
+    .attr('transform', (t) => `translate(${timeRamp(t.tweetTime)}, ${svgHeight - yScale(t.impact)})`);
+
+  // 그룹에 circle 추가
+  tweetG
+    .append('circle')
+    .attr('r', t => radiusScale(t.impact))
+    // .attr('cx', (t, i) => timeRamp(t.tweetTime))
+    // .attr('cy', (t, i) => svgHeight - yScale(t.impact))
+    .style('fill', t => colorScale(t.impact))
+    .style('stroke', '#222')
+
+  // 텍스트 추가
+  tweetG
+    .append('text')
+    .text(t => t.user)
+  tweetG
+    .append('text')
+    .attr('y', 20) // 그룹 위치 기준
+    .text(t => t.impact)
+
+
+
+  const filteredTweet = tweets.filter(t => t.impact > 0);
+  d3.selectAll('g')
+    .data(filteredTweet, t => t._id) // set same key as original data
+    .exit() // remove filtered group
+    .remove()
+
+
+  console.log(`tweets`, tweets);
+})
+
+</script>
+</body>
+</html>

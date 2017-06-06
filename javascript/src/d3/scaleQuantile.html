@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>d3 example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+</head>
+<body>
+  <svg id="svg"></svg>
+<script type="text/javascript">
+  var sampleArray = [100, 200, 500, 4000, 123, 111, 123123, 1];
+  var qScale = d3.scaleQuantile().domain(sampleArray).range([0, 1, 2]);
+
+  sampleArray.forEach(function (value) {
+    console.log(`qScale(${value}) = `, qScale(value));
+  })
+
+</script>
+</body>
+</html>

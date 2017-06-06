@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>d3 example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+</head>
+<body>
+<svg id="svg"></svg>
+<div class="user"></div>
+<div class="user"></div>
+<div class="user"></div>
+<script type="text/javascript">
+  d3.json('https://jsonplaceholder.typicode.com/users', (data) => {
+    enterUsers(data);
+  });
+
+  function enterUsers(users) {
+    // enter missing div.user
+    d3.select('body')
+      .selectAll('div.user')
+      .data(users)
+      .enter()
+      .append('div')
+      .attr('class', 'user')
+      .html((d) => d.name)
+
+    // div.user를 찾아서 새로운 데이터를 바인딩하고 남는 DOM은 제거한다.
+    d3.selectAll('div.user')
+      .data([1,2,3])
+      .html(d => d)
+      .exit().remove()
+  }
+
+</script>
+</body>
+</html>
