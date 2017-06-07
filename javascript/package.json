@@ -11,10 +11,17 @@
     "chai-jsx": "^1.0.1",
     "cross-env": "^2.0.0",
     "expect": "^1.20.2",
-    "gulp": "^3.9.1",
     "jsdom": "^9.8.3",
     "mocha": "^2.5.3",
     "sinon": "^1.17.7"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "immutable": "^3.8.1",
+    "path": "^0.12.7",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   },
   "scripts": {
     "test": "mocha -w --compilers js:babel-register src/**/*.test.js src/**/*.spec.js --reporter nyan",
@@ -52,13 +59,5 @@
       "\\.(css|less)$": "<rootDir>styleMock.js"
     }
   },
-  "license": "ISC",
-  "dependencies": {
-    "browser-sync": "^2.18.12",
-    "gulp-util": "^3.0.8",
-    "immutable": "^3.8.1",
-    "path": "^0.12.7",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
-  }
+  "license": "ISC"
 }
