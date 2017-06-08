@@ -38,14 +38,13 @@ function worldCupOverall(incomingData) {
       .transition()
       .duration(1000)
       .attr('r', circleR) // circle 크기 애니메이션
-  }, 100)
+  }, 100);
 
   teamG
     .append('text')
     .attr('y', 50)
     .style('text-anchor', 'middle')
-    .style('font-size', '12px')
-    .text((d) => d.team)
+    .text((d) => d.team);
 
   teamG
     .on('mouseover', onMouseOverTeamGroup)
@@ -82,13 +81,30 @@ function onClickKeyBtn(key, incomingData) {
  * @param  {[type]} data [description]
  */
 function onMouseOverTeamGroup(group) {
-  d3.selectAll('g.teamG')
-    .select('circle')
-    .style('fill', d => (d.team == group.team) ? '#ff6666' : basicCircleCol);
+  console.log(`this`, this);
+  const selection = d3.select(this)
+  const text = selection.select('text');
+  const circle = selection.select('circle');
+
+  text
+    .classed('active', true)
+
+  circle
+    .style('fill', '#ff6666');
+
+  // // this를 선택하지 않고 전체 그룹 선택해서 스타일 적용.
+  // d3.selectAll('g.teamG')
+  // .style('fill', d => (d.team == group.team) ? '#ff6666' : basicCircleCol);
 }
 
 function onMouseOutTeamGroup(group) {
-  d3.selectAll('g.teamG')
+  const selection = d3.select(this);
+
+  selection
+    .select('text')
+    .classed('active', false)
+
+  selection
     .select('circle')
     .style('fill', basicCircleCol);
 }
@@ -123,6 +139,19 @@ d3.csv('resources/worldcup.csv', (data) => {
   .teamG:hover {
     cursor: pointer;
   }
+
+  .teamG text {
+    font-size: 12px;
+  }
+
+  .teamG text.active {
+    font-weight: bold;
+    font-size: 30px;
+    transition: all 0.2s ease;
+    background-color: #fff;
+    padding: 4px;
+  }
+
   /* #96ceb4 (150,206,180) */
   /* #ffeead (255,238,173) */
   /* #ff6f69 (255,111,105) */
