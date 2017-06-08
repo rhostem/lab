@@ -1,5 +1,5 @@
 {
-  "extends": "eslint-config-airbnb",
+  "extends": "eslint:recommended",
   "globals": {
     "d3": true,
     "_": true,

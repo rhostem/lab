@@ -18,8 +18,17 @@
 <body>
 <svg id="svg"></svg>
 <script type="text/javascript">
-const data = [100, 200, 500, 300, 200, 10, 700].sort((a, b) => b - a);
+const data = [];
+for (let i = 0; i < 100; i++) {
+  data.push(i * 10);
+}
 
+const r = 18;
+const distance = 13;
+const svgW = 500;
+// const svgH = 500;
+const circleInLine = Math.floor(500 / (r * 2 + distance))
+const baseoffset = 30;
 const rainbow = d3.scaleSequential(d3.interpolateRainbow)
   .domain([d3.min(data), d3.max(data)])
   .clamp(true);
@@ -30,8 +39,8 @@ d3.select('svg')
   .enter()
   .append('circle')
   .attr('r', 20)
-  .attr('cx', (d, i) => (i + 1) * 50)
-  .attr('cy', 50)
+  .attr('cx', (d, i) => ((i % circleInLine) * (r * 2 + distance) % svgW) + baseoffset)
+  .attr('cy', (d, i) => Math.floor(i / circleInLine) * (r * 2 + distance) + baseoffset)
   .style('fill', d => rainbow(d));
 </script>
 </body>
