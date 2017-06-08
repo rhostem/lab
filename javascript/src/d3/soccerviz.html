@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>d3 practice - soccerviz</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+</head>
+<body>
+  <div id="controls"></div>
+  <svg id="svg"></svg>
+<script type="text/javascript">
+
+const circleR = 25;
+const basicCircleCol = 'pink';
+
+function worldCupOverall(incomingData) {
+  d3.select('svg')
+    .append('g')
+    .attr('id', 'soccerG')
+    .attr('transform', 'translate(50, 200)')
+    .selectAll('g')
+    .data(incomingData) // 국가별 데이터
+    .enter()
+    .append('g') // 국가별 그룹 추가
+    .attr('class', 'teamG')
+    .attr('transform', (d, i) => `translate(${i * 70}, 0)`)
+
+  const teamG = d3.selectAll('g.teamG'); // 국가별 그룹 선택
+
+  setTimeout(() => {
+    teamG
+      .append('circle')
+      .style('fill', basicCircleCol)
+      .style('stroke', '#222')
+      .style('stroke-width', 1)
+      .transition()
+      .duration(1000)
+      .attr('r', circleR) // circle 크기 애니메이션
+  }, 100)
+
+  teamG
+    .append('text')
+    .attr('y', 50)
+    .style('text-anchor', 'middle')
+    .style('font-size', '12px')
+    .text((d) => d.team)
+
+  teamG
+    .on('mouseover', onMouseOverTeamGroup)
+    .on('mouseout', onMouseOutTeamGroup)
+
+  // 버튼에 바인딩할 키 추출. 팀, 지역 제외한 컬럼
+  const dataKeys = d3.keys(incomingData[0]).filter(key => key !=='team' && key !=='region');
+
+  d3.select('#controls')
+    .selectAll('button.key')
+    .data(dataKeys).enter()
+    .append('button')
+    .on('click', d => onClickKeyBtn(d, incomingData))
+    .html(d => d)
+}
+
+/**
+ * 키 버튼 클릭
+ */
+function onClickKeyBtn(key, incomingData) {
+  const maxVal = d3.max(incomingData, d => parseInt(d[key], 10));
+  const rScale = d3.scaleLinear().domain([0, maxVal]).range([2, circleR * 1.5]).clamp(true)
+
+  d3.selectAll('g.teamG') // 모든 국가 그룹 선택
+    .select('circle') // 국가 그룹 내부의 circle 선택
+    .transition()
+    .delay((d, i) => i * 50) // 순서별로 애니메이션 딜레이를 준다
+    .duration(500)
+    .attr('r', d => rScale(d[key]))
+}
+
+/**
+ * 팀 group 마우스오버
+ * @param  {[type]} data [description]
+ */
+function onMouseOverTeamGroup(group) {
+  d3.selectAll('g.teamG')
+    .select('circle')
+    .style('fill', d => (d.team == group.team) ? '#ff6666' : basicCircleCol);
+}
+
+function onMouseOutTeamGroup(group) {
+  d3.selectAll('g.teamG')
+    .select('circle')
+    .style('fill', basicCircleCol);
+}
+
+//
+d3.csv('resources/worldcup.csv', (data) => {
+  worldCupOverall(data);
+})
+
+</script>
+<style>
+  svg {
+    width: 640px;
+    height: 500px;
+    border: 1px solid gray;
+  }
+
+  button {
+    all: initial;
+    color: #222;
+    background-color: #ccc;
+    border-radius: 2px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  .teamG:hover {
+    cursor: pointer;
+  }
+  /* #96ceb4 (150,206,180) */
+  /* #ffeead (255,238,173) */
+  /* #ff6f69 (255,111,105) */
+  /* #ffcc5c (255,204,92) */
+  /* #88d8b0 (136,216,176) */
+</style>
+</body>
+</html>

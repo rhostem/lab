@@ -27,6 +27,7 @@
     "prefer-arrow-callback": "off",
     "no-var": "off",
     "prefer-template": "off",
-    "prefer-rest-params": "off"
+    "prefer-rest-params": "off",
+    "no-console": "off"
   }
 }
