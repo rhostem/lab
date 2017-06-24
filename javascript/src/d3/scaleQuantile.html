@@ -9,12 +9,18 @@
 </head>
 <body>
   <svg id="svg"></svg>
+  <div id="log"></div>
 <script type="text/javascript">
   var sampleArray = [100, 200, 500, 4000, 123, 111, 123123, 1];
   var qScale = d3.scaleQuantile().domain(sampleArray).range([0, 1, 2]);
 
+  const log = document.querySelector('#log');
   sampleArray.forEach(function (value) {
-    console.log(`qScale(${value}) = `, qScale(value));
+    const p = document.createElement('p');
+    const text = `qScale(${value}) = ${qScale(value)}`
+    p.innerText = text;
+    log.append(p);
+    console.log(text);
   })
 
 </script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>d3 practice</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+</head>
+<style>
+  svg {
+    height: 500px;
+    width: 500px;
+    padding: 30px;
+    border: 1px solid gray;
+  }
+  /* #96ceb4 (150,206,180) */
+  /* #ffeead (255,238,173) */
+  /* #ff6f69 (255,111,105) */
+  /* #ffcc5c (255,204,92) */
+  /* #88d8b0 (136,216,176) */
+</style>
+<body>
+<svg id="svg"></svg>
+<div id="log"></div>
+<script type="text/javascript">
+  const peopleData = [
+    { friends: 3, salary: 10000 },
+    { friends: 5, salary: 20000 },
+    { friends: 1, salary: 90000 },
+    { friends: 10, salary: 77000 },
+    { friends: 7, salary: 20000 },
+  ];
+
+  const xExtent = d3.extent(peopleData, (d) => d.salary);
+  const yExtent = d3.extent(peopleData, (d) => d.friends);
+  const xScale = d3.scaleLinear().domain(xExtent).range([0,500]);
+  const yScale = d3.scaleLinear().domain(yExtent).range([0,500]);
+
+  d3.select('svg')
+    .selectAll('circle')
+    .data(peopleData)
+    .enter()
+    .append('circle')
+    .attr('fill', 'palevioletred')
+    .attr('r', 10)
+    .attr('cx', d => xScale(d.salary))
+    .attr('cy', d => yScale(d.friends))
+
+  const yAxis = d3.axisRight(yScale).tickSize(500).ticks(3);
+  const xAxis = d3.axisTop(xScale).tickSize(500).ticks(10, 's');
+
+  d3.select('svg').append('g').attr('id', 'yAxisG').call(yAxis);
+  d3.select('svg').append('g').attr('id', 'xAxisG').call(xAxis)
+    .attr('transform', 'translate(0, 500)') // (0, 0)에 위치하기 때문에 이동시켜준다.
+
+</script>
+</body>
+</html>
