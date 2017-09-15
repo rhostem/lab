@@ -1,0 +1,28 @@
+extends template/layout-default
+
+block meta
+  title menu detail page
+
+block styles
+  link(rel="stylesheet" href="./css/menu-detail.css")
+
+block main
+  .menuDetailPopup
+    .menuDetailPopup-dimmedLayer
+    .menuDetailPopup-container
+      .menuDetailPopup-imagePanel(style="background-image: url('./imgs/mock/menu-detail.png');")  
+      .menuDetailPopup-descPanel
+        .menuDetailPopup-titleSummary 육즙 가득한 BBQ 베스트메뉴
+        .menuDetailPopup-title 황금올리브치킨
+        .menuDetailPopup-scrollPanel
+          p.menuDetailPopup-menuDescription
+            | 한입 바삭하게 베어물면 느껴지는 고소한 육즙의 황금올리브 치킨과 입안에 퍼지는 부드러운 매콤한 맛의 황금올리브양념 치킨을 반반으로 한번에 즐겨보세요!
+          img.menuDetailPopup-originOfChicken(src='./imgs/origin-of-chicken.png', alt='')
+        .menuDetailPopup-orderBar
+          button.menuDetailPopup-cartButton(name='장바구니 버튼') 장바구니
+          button.menuDetailPopup-directOrderButton(name='바로주문 버튼 ')
+
+block scripts
+  //- script(type='text/javascript', src='./js/index.js')
+
+

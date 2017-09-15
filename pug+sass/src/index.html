@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="ko-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BBQ PC 웹사이트">
+    <meta name="keyword" content="푸드, 치킨, 배달, 프랜차이즈">
+    <title>index page (menu)</title>
+    <link rel="stylesheet" href="./lib/normalize.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/menu-detail.css">
+  </head>
+  <body>
+    <div class="section">
+      <div class="section-content">
+        <!-- header-->
+        <div class="header">
+          <!-- logo--><img class="header-logo" src="./imgs/header-logo.png" alt="">
+          <div class="header-menu">
+            <!-- links-->
+            <div class="header-links"><a href="https://www.bbq.co.kr/menu/menu.asp">온라인 주문</a><a href="https://www.bbq.co.kr/foundation/guide_step.asp">창업 안내</a></div>
+            <!-- navMenu-->
+            <div class="header-navMenuWrap">
+              <div class="header-navMenu"><a class="header-navMenuItem" href="#" onclick="window.open('https://www.bbq.co.kr/member/pop_login.asp','로그인', 'width=514,height=600,resizable,scrollbars=no,status=1'); return false;">로그인</a><a class="header-navMenuItem" href="https://onepass.genesiskorea.co.kr/agree.asp?site=BBQ">회원가입</a><a class="header-navMenuItem" href="">e-쿠폰</a><a class="header-navMenuItem" href="https://www.bbq.co.kr/mypage/order_list_nonmember.asp">주문조회</a>
+                <!-- end of section header-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section--bannerSlider">
+      <!-- slider-->
+      <div class="bannerSlider-slideContainer">
+        <div class="bannerSlider-slide" style="background-image: url('./imgs/mock/HOT-Balloon-Trip_Ultra_HD.jpg');"></div>
+        <div class="bannerSlider-slide" style="background-image: url('./imgs/mock/slide-sample.jpg');"></div>
+      </div>
+      <div class="bannerSlider-controlContainer">
+        <button class="bannerSlider-leftBtn" onclick=""></button>
+        <button class="bannerSlider-rightBtn" onclick=""></button>
+      </div>
+    </div>
+    <div class="section section--menu">
+      <div class="section-content">
+        <!-- is-Current 클래스 추가시 하이라이트-->
+        <div class="mainTabBar">
+          <button class="mainTabBar-tab is-current"><span class="mainTabBar-text menu">메뉴보기</span>
+            <div class="mainTabBar-tabBg"></div>
+            <div class="mainTabBar-tabBgTriangle"></div>
+          </button>
+          <button class="mainTabBar-tab"><span class="mainTabBar-text store">매장찾기</span>
+            <div class="mainTabBar-tabBg"></div>
+            <div class="mainTabBar-tabBgTriangle--left"></div>
+          </button>
+        </div>
+        <!-- 메뉴 정렬 기준 선택 탭-->
+        <div class="menuSortTabBar">
+          <button class="menuSortTabBar-tab is-selected">인기순</button>
+          <button class="menuSortTabBar-tab">신메뉴순</button>
+          <button class="menuSortTabBar-tab">가격순</button>
+        </div>
+        <!-- 메뉴 카드 컨테이너-->
+        <div class="menuContainer">
+          <div class="menuContainer-rows">
+            <!-- row에 카드 4개씩 추가-->
+            <!-- 메뉴 카드. 섬네일 이미지는 inline style 속성으로 지정-->
+            <div class="menuContainer-row"><a class="menuCard" href="">
+                <div class="menuCard-thumbnail" style="background-image: url('./imgs/mock/sample-menu.png');"></div>
+                <div class="menuCard-title" onclick="">title</div>
+                <div class="menuCard-desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                  qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                  fugiat!
+                </div>
+                <div class="menuCard-price">16,000원</div></a><a class="menuCard" href="">
+                <div class="menuCard-thumbnail" style="background-image: url('./imgs/mock/sample-menu.png');"></div>
+                <div class="menuCard-title" onclick="">title</div>
+                <div class="menuCard-desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                  qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                  fugiat!
+                </div>
+                <div class="menuCard-price">16,000원</div></a><a class="menuCard" href="">
+                <div class="menuCard-thumbnail" style="background-image: url('./imgs/mock/sample-menu.png');"></div>
+                <div class="menuCard-title" onclick="">title</div>
+                <div class="menuCard-desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                  qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                  fugiat!
+                </div>
+                <div class="menuCard-price">16,000원</div></a><a class="menuCard" href="">
+                <div class="menuCard-thumbnail" style="background-image: url('./imgs/mock/sample-menu.png');"></div>
+                <div class="menuCard-title" onclick="">title</div>
+                <div class="menuCard-desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                  qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                  fugiat!
+                </div>
+                <div class="menuCard-price">16,000원</div></a></div>
+          </div>
+          <button class="menuContainer-showMoreBtn">더보기</button>
+        </div>
+      </div>
+    </div>
+    <div class="section section--brand">
+      <div class="section-content">
+        <div class="bbqBrandContainer">
+          <div class="bbqBrandItem">
+            <div class="bbqBrandItem-title">BBQ MOVIE</div>
+            <p class="bbqBrandItem-titleDesc">BBQ의 재미있는 CF를 감상해 보세요</p>
+            <div class="bbqBrandItem-contentImg" style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png');"></div>
+            <div class="bbqBrandItem-contentTitle">BBQ TV CF 방탄소년단 -</div>
+            <p class="bbqBrandItem-contentDesc">큼지막한 맛이 필요할땐 BBQ 자메이카 통다리구이가 딱!</p>
+          </div>
+          <div class="bbqBrandItem">
+            <div class="bbqBrandItem-title">황금올리브의 비밀</div>
+            <p class="bbqBrandItem-titleDesc">황금올리브의 비밀</p>
+            <div class="bbqBrandItem-contentImg" style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png');"></div>
+            <div class="bbqBrandItem-contentTitle">황금올리브유 -</div>
+            <p class="bbqBrandItem-contentDesc">엑스트라 버진 올리브유를 원료로 하는 BBQ만의 오일</p>
+          </div>
+          <div class="bbqBrandItem">
+            <div class="bbqBrandItem-title">BBQ STORY</div>
+            <p class="bbqBrandItem-titleDesc">Best of the Best quality</p>
+            <div class="bbqBrandItem-contentImg" style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png');"></div>
+            <div class="bbqBrandItem-contentTitle">세상에서 가장 맛있는 치킨, BBQ -</div>
+            <p class="bbqBrandItem-contentDesc">최고의 맛은 물론 고객의 건강까지 생각합니다.</p>
+          </div>
+        </div>
+        <!-- 공지사항-->
+        <div class="bbqBrandHalfPanelContainer">
+          <div class="bbqBrandHalfPanelContainer-panel bbqBrandAnnounce">
+            <div class="bbqBrandAnnounce-head">
+              <div class="bbqBrandAnnounce-headText">BBQ 공지사항</div><a class="bbqBrandAnnounce-showMore" href="">더보기</a>
+            </div>
+            <li class="bbqBrandAnnounce-row"><span class="bbqBrandAnnounce-title">[한정판매] NEW 치도락 런칭안내</span>
+              <div class="bbqBrandAnnounce-date">2017-03-03</div>
+            </li>
+            <li class="bbqBrandAnnounce-row"><span class="bbqBrandAnnounce-title">[한정판매] NEW 치도락 런칭안내</span>
+              <div class="bbqBrandAnnounce-date">2017-03-03</div>
+            </li>
+            <li class="bbqBrandAnnounce-row"><span class="bbqBrandAnnounce-title">[한정판매] NEW 치도락 런칭안내</span>
+              <div class="bbqBrandAnnounce-date">2017-03-03</div>
+            </li>
+          </div>
+          <div class="bbqBrandHalfPanelContainer-panel bbqCsGuide">
+            <div class="bbqCsGuide-panel">
+              <div class="csGuide-title">창업문의</div>
+              <div class="csGuide-phoneNumber">080-383-9000</div>
+              <ul class="csGuide-noticeList">
+                <li>연중 무휴 상담가능</li>
+                <li>운영시간 06:00 ~ 24:00</li>
+              </ul>
+            </div>
+            <div class="bbqCsGuide-panel">
+              <div class="csGuide-title">고객센터</div>
+              <div class="csGuide-phoneNumber">080-3436-0507</div>
+              <ul class="csGuide-noticeList">
+                <li>토요일, 공휴일은 휴무</li>
+                <li>운영시간 10:00~18:00</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section--footer">
+      <div class="section-content">
+        <div class="footerContainer">
+          <div class="footerContainer-linksContainer">
+            <!-- 메뉴 링크-->
+            <div class="footerContainer-menuLinks">
+              <div class="footerContainer-menuLinksColumn">
+                <div class="footerContainer-menuLinksColHead">브랜드스토리</div><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/brand/story.asp">BBQ Story</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/brand/oliveFaq.asp">올리브 이야기</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/brand/picture.asp">영상 컨텐츠</a>
+              </div>
+              <div class="footerContainer-menuLinksColumn">
+                <div class="footerContainer-menuLinksColHead">BBQ 소식</div><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/news/event.asp">이벤트</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/news/notice.asp">공지사항</a>
+              </div>
+              <div class="footerContainer-menuLinksColumn">
+                <div class="footerContainer-menuLinksColHead">BBQ체험</div><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/camp/chicken.asp">치킨캠프</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/camp/camping.asp">제휴캠핑장</a>
+              </div>
+              <div class="footerContainer-menuLinksColumn">
+                <div class="footerContainer-menuLinksColHead">BBQ창업</div><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/foundation/inquiry_db.asp">창업문의</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/foundation/guide_step.asp">창업안내</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/foundation/knowhow_story.asp">성공노하우</a><a class="footerContainer-menuLink" href="https://www.bbq.co.kr/foundation/type_chicken.asp">타입소개</a>
+              </div>
+            </div>
+            <!-- SNS link-->
+            <div class="footerContainer-snsLinks"><a class="footerContainer-snsLink footerContainer-snsLink--instagram" href="https://www.instagram.com/bbq.chicken.insta" target="blank"><span>Instagram</span></a><a class="footerContainer-snsLink footerContainer-snsLink--facebook" href="https://www.facebook.com/bbqfb" target="blank"><span>facebook</span></a><a class="footerContainer-snsLink footerContainer-snsLink--naverblog" href="http://blog.naver.com/blogbbq" target="blank"><span>네이버블로그</span></a></div>
+          </div>
+          <div class="footerContainer-familySites">
+            <div class="footerContainer-familySitesLinks"><a class="footerContainer-familySitesLink" href="http://mall.bbq.co.kr/" target="blank">BBQ몰 바로가기</a><a class="footerContainer-familySitesLink" href="http://www.genesiskorea.co.kr/" target="blank">제네시스그룹</a><a class="footerContainer-familySitesLink" href="http://bbqglobal.com/gl/main.asp" target="blank">Global BBQ</a></div>
+          </div>
+          <div class="footerContainer-terms"><a class="footerContainer-termsLink" href=""><span>개인정보취급방침</span></a><a class="footerContainer-termsLink" href=""><span>이메일주소무단수집거부</span></a><a class="footerContainer-termsLink" href=""><span>이용약관</span></a></div>
+          <div class="footerContainer-companyInfo">
+            <p>서울특별시 송파구 중대로 64(문정동) 제너시스빌딩 대표이사: 윤경주</p>
+            <p><span>통신판매업신고: 2010-서울송파-1181호사업자등록번호: 207-81-43555</span><span class="footerContainer-companyInfo--right">Copyright 2015 © GENESIS BBQ. All rights reserved.</span></p>
+            <!-- end of section section--footer-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- slick-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
+    <!-- custom script-->
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
+</html>

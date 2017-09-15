@@ -1,0 +1,124 @@
+/**
+ * section footer
+ */
+.section.section--footer {
+  background-color: #1d1d1d;
+}
+
+.footerContainer {
+  padding: 31px 0 61px;
+  color: #fff;
+}
+
+.footerContainer-linksContainer {
+  @extend .u-clearfix;
+  margin-top: 14px;
+  margin-bottom: 45px;
+}
+
+.footerContainer-menuLinks {
+  @extend .u-clearfix;
+  float: left;
+  font-size: 12px;
+  line-height: 1.85;
+  letter-spacing: -0.4px;
+}
+
+.footerContainer-menuLinksColumn {
+  float: left;
+  width: 130px;
+  text-align: left;
+}
+
+.footerContainer-menuLinksColHead {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.footerContainer-menuLink {
+  display: block;
+  text-decoration: none;
+  line-height: 2.2;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footerContainer-snsLinks {
+  float: right;
+  width: 320px;
+  margin-top: 40px;
+}
+
+.footerContainer-snsLink {
+  float: left;
+  width: 33.3333%;
+  padding-top: 51.5px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  text-align: center;
+  background-position: top center;
+  background-size: 41px;
+  background-repeat: no-repeat;
+}
+
+.footerContainer-snsLink--instagram {
+  background-image: url('../imgs/sns-instagram.png');
+}
+.footerContainer-snsLink--facebook {
+  background-image: url('../imgs/sns-facebook.png');
+}
+.footerContainer-snsLink--naverblog {
+  background-image: url('../imgs/sns-naverblog.png');
+}
+
+.footerContainer-familySites {
+  padding: 20px 0;
+  border-color: #262525;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+}
+
+.footerContainer-familySitesLinks {
+  @extend .u-clearfix;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.footerContainer-familySitesLink {
+  display: block;
+  float: left;
+  width: 20%;
+  margin: 0 6.665%;
+  padding-right: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  background: url('../imgs/footer-arrow-right.png') no-repeat center;
+  background-size: 5px 8.5px;
+  background-position: right center;
+}
+
+.footerContainer-terms {
+  margin-top: 45px;
+}
+
+.footerContainer-termsLink {
+  font-size: 12px;
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footerContainer-companyInfo {
+  margin-top: 23.5px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.footerContainer-companyInfo--right {
+  float: right;
+}

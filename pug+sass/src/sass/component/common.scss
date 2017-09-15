@@ -1,0 +1,16 @@
+@import './component/base.scss';
+@import './component/config.scss';
+@import './component/font.scss';
+@import './component/footer.scss';
+@import './component/header.scss';
+@import './component/mixins.scss';
+@import './component/utility.scss';
+
+.section {
+  background-color: #fff;
+}
+
+.section-content {
+  width: $app-width;
+  margin: 0 auto;
+}

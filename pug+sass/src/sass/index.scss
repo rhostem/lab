@@ -1,0 +1,470 @@
+// 메인 메뉴 페이지
+@import './component/common.scss';
+
+// bbq 매뉴 섹션
+.section--menu {
+  background-color: #f9f9f9;
+  padding-bottom: 62px;
+}
+
+/* section--slider */
+.section--bannerSlider {
+  position: relative;
+}
+
+.bannerSlider {
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.bannerSlider-slideContainer {
+  @extend .u-clearfix;
+  width: 100%;
+  height: 410px;
+  overflow: hidden;
+}
+
+.bannerSlider-slide {
+  float: left;
+  width: 100%;
+  height: 410px;
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.bannerSlider-controlContainer {
+  position: absolute;
+  z-index: 1;
+  width: $app-width;
+  height: 410px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.bannerSlider-controlContainer > button {
+  z-index: 10;
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bannerSlider-leftBtn {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-image: url('../imgs/slide-left-btn.png');
+}
+
+.bannerSlider-rightBtn {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-image: url('../imgs/slide-right-btn.png');
+}
+
+.bannerSlider-indicatorContainer {
+  @extend .u-centeredX;
+  z-index: 1001; // slick's default zindex = 1000
+  bottom: 43.5px;
+  transform: translateX(-50%);
+
+  & > li {
+    float: left;
+    margin: 0 5px;
+    background: url('../imgs/slide-indicator.png') no-repeat center;
+    background-size: 40px 2px;
+    list-style: none;
+
+    &.slick-active {
+      background-image: url('../imgs/slide-indicator-is-current.png');
+    }
+  }
+
+  & > li > button {
+    width: 40px;
+    padding: 20px 10px;
+    color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bannerSlider-indicator {
+}
+
+.bannerSlider-indicator.is-current {
+  background-image: url('../imgs/slide-indicator-is-current.png');
+}
+
+.bannerSlider-indicator:not(:last-child) {
+  margin-right: 10px;
+}
+
+.indexPageSection--tabMenu {
+  background-color: #fff;
+}
+
+.mainTabBar {
+  @extend .u-clearfix;
+  position: relative;
+  background-color: #fff;
+  height: 58.5px;
+}
+
+.mainTabBar-tab {
+  @extend .u-clearfix;
+  display: block;
+  position: absolute;
+  top: 0;
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.mainTabBar-tab:nth-child(1) {
+  left: 0;
+}
+
+.mainTabBar-tab:nth-child(2) {
+  right: 0;
+}
+
+.mainTabBar-tab.is-current {
+  margin-top: -5px;
+  margin-bottom: -5px;
+  height: 68.5px;
+  width: calc(50% + 20px);
+}
+
+.mainTabBar-tab.is-current .mainTabBar-tabBg {
+  float: left;
+  background-color: #f00;
+  width: calc(100% - 20px);
+  height: 100%;
+}
+
+.mainTabBar-tab.is-current .mainTabBar-tabBgTriangle {
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 34.25px solid transparent;
+  border-bottom: 34.25px solid transparent;
+  border-left: 20px solid #f00;
+}
+
+.mainTabBar-tab.is-current .mainTabBar-tabBgTriangle--left {
+  float: left;
+  width: 0;
+  height: 0;
+  border-top: 34.25px solid transparent;
+  border-bottom: 34.25px solid transparent;
+  border-right: 20px solid #f00;
+}
+
+.mainTabBar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  background-size: 17.5px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  padding-left: 37.5px;
+}
+
+.mainTabBar-text.menu {
+  background-image: url('../imgs/tab-menu-icon.svg');
+}
+
+.mainTabBar-tab.is-current .mainTabBar-text.menu {
+  color: white;
+  background-image: url('../imgs/tab-menu-icon-white.svg');
+}
+
+.mainTabBar-text.store {
+  background-size: 19.5px;
+  background-image: url('../imgs/tab-store-icon.png');
+}
+
+.mainTabBar-tab.is-current .mainTabBar-text.store {
+  color: white;
+  background-image: url('../imgs/tab-store-icon-white.png');
+}
+
+.menuContainer {
+  margin-top: 33px;
+}
+
+.menuSortTabBar {
+  @extend .u-clearfix;
+  width: 70%;
+  margin: 12.5px auto 0;
+}
+
+.menuSortTabBar-tab {
+  display: block;
+  position: relative;
+  float: left;
+  width: 33.3333%;
+  padding: 18.5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.menuSortTabBar-tab.is-selected {
+  color: #f00;
+}
+
+.menuSortTabBar-tab.is-selected::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f00;
+  width: 60px;
+  height: 2px;
+}
+
+/* grid gutter = 20px */
+.menuContainer-row {
+  @extend .u-clearfix;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.menuContainer-row:not(:last-child) {
+  margin-bottom: 90px;
+
+}
+
+.menuCard {
+  display: block;
+  float: left;
+  width: 25%;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #1d1d1d;
+}
+
+.menuCard-thumbnail {
+  width: 100%;
+  height: 146.5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.menuCard-title {
+  font-weight: bold;
+  margin-top: 13px;
+  line-height: 1;
+  font-size: 16px;
+  position: relative;
+}
+
+.menuCard-title:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: ' ';
+  background: url('../imgs/menu-arrow-right-icon.png') no-repeat;
+  background-size: 5.5px 10px;
+}
+
+.menuCard-desc {
+  margin-top: 13.5px;
+  font-size: 13px;
+  height: 33px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #1d1d1d;
+}
+
+.menuCard-price {
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menuContainer-showMoreBtn {
+  display: block;
+  width: 70px;
+  padding-top: 80px;
+  margin: 60px auto 0;
+  background: url('../imgs/show-more-btn.png') no-repeat center;
+  background-size: contain;
+  background-color: 57px;
+  text-align: center;
+  background-position: center top;
+}
+
+
+.section--brand {
+  background-color: #fff;
+  padding-top: 60px;
+}
+
+/* grid row */
+.bbqBrandContainer {
+  @extend .u-clearfix;
+  margin-left: -7.5px;
+  margin-right: -7.5px;
+}
+
+/* grid column */
+.bbqBrandItem {
+  float: left;
+  width: 33.3333%;
+  padding: 0 7.5px;
+}
+
+.bbqBrandItem-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+.bbqBrandItem-titleDesc {
+  font-size: 12px;
+  margin-top: 15px;
+  line-height: 1;
+}
+
+.bbqBrandItem-contentImg {
+  width: 100%;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #dfdfdf;
+}
+
+.bbqBrandItem-contentTitle {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.bbqBrandItem-contentDesc {
+  font-size: 13px;
+  margin: 5px 0;
+  letter-spacing: -0.3px;
+}
+
+
+.bbqBrandHalfPanelContainer {
+  @extend .u-clearfix;
+  margin-top: 60px;
+  border-top: 1px solid #f6f6f6;
+}
+
+.bbqBrandHalfPanelContainer-panel {
+  float: left;
+  width: 50%;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.bbqBrandHalfPanelContainer-panel:first-child {
+  border-right: 1px solid #f6f6f6;
+}
+
+.bbqBrandHalfPanelContainer-panel.bbqBrandAnnounce {
+  padding-right: 41px;
+}
+
+.bbqBrandAnnounce-head {
+  @extend .u-clearfix;
+  border-bottom: 1px solid #1d1d1d;
+  padding-bottom: 20px;
+  margin-bottom: 17px;
+}
+.bbqBrandAnnounce-headText {
+  float: left;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.bbqBrandAnnounce-showMore {
+  float: right;
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 12px;
+  padding-right: 15px;
+  background:url('../imgs/menu-arrow-right-icon.png') no-repeat;
+  background-position: right center;
+  background-size: 4px 7.5px;
+}
+
+.bbqBrandAnnounce-list {
+  list-style-type: disc;
+  padding: 0;
+}
+
+.bbqBrandAnnounce-row {
+  @extend .u-clearfix;
+  padding-left: 5px;
+  position: relative;
+  display: list-item;
+  margin: 9px 0;
+  font-size: 13px;
+  letter-spacing: -0.4px;
+}
+
+.bbqBrandAnnounce-title {
+  margin-left: -5px;
+}
+.bbqBrandAnnounce-date {
+  float: right;
+}
+
+.bbqBrandHalfPanelContainer-panel {
+  &.bbqCsGuide {
+    @extend .u-clearfix;
+    padding-left: 41px;
+  }
+}
+
+.bbqCsGuide-panel {
+  float: left;
+  width:50%;
+  padding-right: 40px;
+}
+
+.csGuide-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.csGuide-phoneNumber {
+  margin-top: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url('../imgs/phone-icon.png') no-repeat left center;
+  background-size: 14px;
+  padding-left: 20px;
+}
+
+.csGuide-noticeList {
+  font-size: 13px;
+  margin-top: 22px;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+.csGuide-noticeList > li {
+  line-height: 2;
+}
+
