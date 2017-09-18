@@ -65,6 +65,7 @@ gulp.task('pug', function buildHTML() {
     pretty: true
   }))
   .pipe(gulp.dest(conf.paths.pug.dist))
+  .pipe(browserSync.reload({ stream: true }));
 });
 
 /**
@@ -86,20 +87,21 @@ gulp.task('serve', function() {
  * watch source files
  */
 gulp.task('watch', function() {
-  const reload = () => browserSync.reload()
+  gulp.watch(path.join(conf.paths.src, '/**/*.pug'), ['pug'])
+  gulp.watch(
+    [
+      path.join(conf.paths.src, '/**/*.scss'),
+      path.join(conf.paths.src, '/**/*.sass'),
+    ],
+    ['sass']
+  )
 
   gulp.watch(
     [
-      path.join(conf.paths.src, '/**/*.html'),
       path.join(conf.paths.src, '/**/*.js'),
-      path.join(conf.paths.src, '/**/*.css'),
-      path.join(conf.paths.src, '/**/*.scss'),
     ],
-    function () {
-      browserSync.reload()
+    function() {
+      browserSync.reload({ stream: true })
     }
   )
-
-  gulp.watch([conf.paths.sass.src], ['sass']);
-  gulp.watch([conf.paths.pug.src], ['pug']);
 })
