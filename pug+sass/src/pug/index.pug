@@ -1,0 +1,144 @@
+extends template/layout-default
+
+block meta
+  title index page (menu)
+
+block styles
+  link(rel="stylesheet" href="./css/index.css")
+  link(rel="stylesheet" href="./css/menu-detail.css")
+
+block main
+  .section.section--bannerSlider
+    // slider
+    .bannerSlider-slideContainer
+      .bannerSlider-slide(style="background-image: url('./imgs/mock/HOT-Balloon-Trip_Ultra_HD.jpg')")
+      .bannerSlider-slide(style="background-image: url('./imgs/mock/slide-sample.jpg')")
+    .bannerSlider-controlContainer
+      button.bannerSlider-leftBtn(onclick='')
+      button.bannerSlider-rightBtn(onclick='')
+
+  .section.section--menu
+    .section-content
+      // is-Current 클래스 추가시 하이라이트
+      .mainTabBar
+        button.mainTabBar-tab.is-current
+          span.mainTabBar-text.menu 메뉴보기
+          .mainTabBar-tabBg
+          .mainTabBar-tabBgTriangle
+        button.mainTabBar-tab
+          span.mainTabBar-text.store 매장찾기
+          .mainTabBar-tabBg
+          .mainTabBar-tabBgTriangle--left
+
+      // 메뉴 정렬 기준 선택 탭
+      .menuSortTabBar
+        button.menuSortTabBar-tab.is-selected 인기순
+        button.menuSortTabBar-tab 신메뉴순
+        button.menuSortTabBar-tab 가격순
+
+      // 메뉴 카드 컨테이너
+      .menuContainer
+        .menuContainer-rows
+
+          // row에 카드 4개씩 추가
+          // 메뉴 카드. 섬네일 이미지는 inline style 속성으로 지정
+          .menuContainer-row
+            a.menuCard(href='')
+              .menuCard-thumbnail(style="background-image: url('./imgs/mock/sample-menu.png');")
+              .menuCard-title(onclick='') title
+              .menuCard-desc
+                | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                | qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                | fugiat!
+              .menuCard-price 16,000원
+            a.menuCard(href='')
+              .menuCard-thumbnail(style="background-image: url('./imgs/mock/sample-menu.png');")
+              .menuCard-title(onclick='') title
+              .menuCard-desc
+                | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                | qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                | fugiat!
+              .menuCard-price 16,000원
+            a.menuCard(href='')
+              .menuCard-thumbnail(style="background-image: url('./imgs/mock/sample-menu.png');")
+              .menuCard-title(onclick='') title
+              .menuCard-desc
+                | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                | qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                | fugiat!
+              .menuCard-price 16,000원
+            a.menuCard(href='')
+              .menuCard-thumbnail(style="background-image: url('./imgs/mock/sample-menu.png');")
+              .menuCard-title(onclick='') title
+              .menuCard-desc
+                | Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque labore accusamus asperiores mollitia nostrum
+                | qui eveniet rerum ducimus eos, totam suscipit sunt placeat illum dolorem voluptatum neque consectetur adipisci
+                | fugiat!
+              .menuCard-price 16,000원
+        button.menuContainer-showMoreBtn
+          | 더보기
+
+  .section.section--brand
+    .section-content
+      .bbqBrandContainer
+        .bbqBrandItem
+          .bbqBrandItem-title BBQ MOVIE
+          p.bbqBrandItem-titleDesc BBQ의 재미있는 CF를 감상해 보세요
+          .bbqBrandItem-contentImg(style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png')")
+          .bbqBrandItem-contentTitle
+            | BBQ TV CF 방탄소년단 -
+          p.bbqBrandItem-contentDesc 큼지막한 맛이 필요할땐 BBQ 자메이카 통다리구이가 딱!
+        .bbqBrandItem
+          .bbqBrandItem-title 황금올리브의 비밀
+          p.bbqBrandItem-titleDesc 황금올리브의 비밀
+          .bbqBrandItem-contentImg(style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png')")
+          .bbqBrandItem-contentTitle
+            | 황금올리브유 -
+          p.bbqBrandItem-contentDesc 엑스트라 버진 올리브유를 원료로 하는 BBQ만의 오일
+        .bbqBrandItem
+          .bbqBrandItem-title BBQ STORY
+          p.bbqBrandItem-titleDesc Best of the Best quality
+          .bbqBrandItem-contentImg(style="background-image: url('./imgs/mock/bbqbrand-movie-thumb.png')")
+          .bbqBrandItem-contentTitle
+            | 세상에서 가장 맛있는 치킨, BBQ -
+          p.bbqBrandItem-contentDesc 최고의 맛은 물론 고객의 건강까지 생각합니다.
+
+      // 공지사항
+      .bbqBrandHalfPanelContainer
+        .bbqBrandHalfPanelContainer-panel.bbqBrandAnnounce
+          .bbqBrandAnnounce-head
+            .bbqBrandAnnounce-headText BBQ 공지사항
+            a.bbqBrandAnnounce-showMore(href='') 더보기
+          li.bbqBrandAnnounce-row
+            span.bbqBrandAnnounce-title [한정판매] NEW 치도락 런칭안내
+            .bbqBrandAnnounce-date 2017-03-03
+          li.bbqBrandAnnounce-row
+            span.bbqBrandAnnounce-title [한정판매] NEW 치도락 런칭안내
+            .bbqBrandAnnounce-date 2017-03-03
+          li.bbqBrandAnnounce-row
+            span.bbqBrandAnnounce-title [한정판매] NEW 치도락 런칭안내
+            .bbqBrandAnnounce-date 2017-03-03
+        .bbqBrandHalfPanelContainer-panel.bbqCsGuide
+          .bbqCsGuide-panel
+            .csGuide-title 창업문의
+            .csGuide-phoneNumber 080-383-9000
+            ul.csGuide-noticeList
+              li 연중 무휴 상담가능
+              li 운영시간 06:00 ~ 24:00
+          .bbqCsGuide-panel
+            .csGuide-title 고객센터
+            .csGuide-phoneNumber 080-3436-0507
+            ul.csGuide-noticeList
+              li 토요일, 공휴일은 휴무
+              li 운영시간 10:00~18:00
+
+
+block scripts
+  // slick
+  script(type='text/javascript', src='https://code.jquery.com/jquery-1.11.0.min.js')
+  script(type='text/javascript', src='https://code.jquery.com/jquery-migrate-1.2.1.min.js')
+  script(type='text/javascript', src='./lib/slick/slick.min.js')
+  // custom script
+  script(type='text/javascript', src='./js/index.js')
+
+

@@ -1,0 +1,53 @@
+.header {
+  @extend .u-clearfix;
+  min-height: 111px;
+}
+
+.header-logo {
+  width: 349px;
+  height: auto;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+.header-menu {
+  @extend .u-clearfix;
+  float: right;
+}
+
+.header-links {
+  margin-top: 26px;
+  text-align: right;
+}
+
+.header-links > a {
+  margin-left: 20px;
+  font-size: 13px;
+  color: #666666;
+  text-decoration: none;
+}
+
+.header-links > a:hover {
+  color: #f00;
+}
+
+.header-cartMenu {
+  margin-top: 26px;
+  /* float: right; */
+}
+
+.header-navMenuWrap {
+  @extend .u-clearfix;
+  margin-top: 15.5px;
+}
+
+.header-navMenu {
+  float: right;
+}
+
+.header-navMenuItem {
+  font-size: 16px;
+  margin-left: 27px;
+  color: #000;
+  text-decoration: none;
+}

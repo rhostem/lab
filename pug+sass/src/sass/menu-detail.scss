@@ -1,0 +1,122 @@
+// 메뉴 상세 팝업
+
+@import './component/common.scss';
+
+$menuPopup-height: 460px;
+$menuPopup-width: 720px;
+
+.menuDetailPopup {
+  position: relative;
+}
+
+.menuDetailPopup-dimmedLayer {
+  position: fixed;
+  z-index: 1999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.menuDetailPopup-container {
+  @extend .u-centeredFixed;
+  @extend .u-clearfix;
+  z-index: 2000;
+  width: $menuPopup-width;
+  height: $menuPopup-height;
+  border-radius: 5px;
+}
+
+.menuDetailPopup-imagePanel {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px 0 0 5px;
+}
+
+.menuDetailPopup-descPanel {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: $menuPopup-height;
+  padding: 35px 35px 35px 50px;
+  background-color: #fafafa;
+  border-radius: 0 5px 5px 0;
+}
+
+.menuDetailPopup-titleSummary {
+  font-weight: 700;
+  font-size: 12px;
+}
+.menuDetailPopup-title {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.menuDetailPopup-scrollPanel {
+  height: 300px;
+  margin-top: 24px;
+  overflow-y: scroll;
+  padding-right: 0.5em;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #e6e6e6;
+  }
+}
+
+.menuDetailPopup-menuDescription {
+  font-size: 13px;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.menuDetailPopup-originOfChicken {
+  display: block;
+  width: 90%;
+  margin: 50px auto 0;
+}
+
+.menuDetailPopup-orderBar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  border-radius: 0 0 5px 0;
+}
+
+.menuDetailPopup-cartButton {
+  height: 100%;
+  margin-left: 77px;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 900;
+  color: #000;
+  background: url('../imgs/menudetail-cart-icon.png') no-repeat center;
+  background-size: 16px 20px;
+  background-position: left center;
+}
+
+.menuDetailPopup-directOrderButton {
+  position: absolute;
+  top: 8px;
+  right: 65px;
+  width: 63.5px;
+  height: 73.5px;
+  background: url('../imgs/menudetail-quick-order.png') no-repeat center;
+  background-size: contain;
+}
