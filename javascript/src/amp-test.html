@@ -1,0 +1,30 @@
+<!-- snippet trigger = 'bjss' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript study</title>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+  <link rel="preload" href="/commons-172264dfa20fb682f1916.js" as="script">
+  <link rel="preload" href="/commons-272264dfa20fb682f1916.js" as="script">
+  <link rel="preload" href="/commons-372264dfa20fb682f1916.js" as="script">
+</head>
+<body>
+
+  <div id="selector"></div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var preloadLinks = $('link[rel="preload"]')
+
+      console.log(`preloadLinks`, preloadLinks);
+
+      preloadLinks.each(function(index) {
+        $(this).removeAttr('as')
+        $(this).removeAttr('rel')
+      });
+    })
+  </script>
+</body>
+</html>
